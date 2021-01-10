@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+	<Properties>
+		<Property name="basePath">./logReports</Property>
+	</Properties>
+	
+	<Appenders>
+	<Console name="Console" target="SYSTEM_OUT" >
+		<PatternLayout pattern = "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} -%msg%n"/>
+	</Console>
+	
+	<RollingFile name="File1" filename="${basePath}/prints.log" filePattern="${basePath}/prints-%d{dd-MM-yyyy}.log">
+		<PatternLayout pattern = "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} -%msg%n"/>
+		<SizeBasedTriggeringPolicy Size= "10000"/>
+	</RollingFile>
+	</Appenders> 
+	
+	<Loggers>
+		<Logger name="searchSort.searchSortAZ.SearchSort" level="ALL" additivity="false"> 
+			<AppenderRef ref="File1"/>
+		</Logger>
+		<Logger name="searchSort.searchSortAZ.CheckDeliveryDate" level="ALL" additivity="false"> 
+			<AppenderRef ref="File1"/>
+		</Logger>
+		<Logger name="resources.CommonModules" level="ALL" additivity="false"> 
+			<AppenderRef ref="File1"/>
+		</Logger>
+		
+		<Root level="INFO">
+			<AppenderRef ref="Console"/>
+		</Root>
+	</Loggers>
+</Configuration>
+  
