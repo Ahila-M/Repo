@@ -1,0 +1,1432 @@
+21:58:05.577 [main] INFO  resources.CommonModules -Going to read input values from excel sheet.
+21:58:05.594 [main] INFO  resources.CommonModules -Opening the excel sheet for reading.
+21:58:06.178 [main] INFO  resources.CommonModules -Input excel sheet opened successfully.
+21:58:06.178 [main] INFO  resources.CommonModules -In input excel sheet-> access sheet named 'input'.
+21:58:13.842 [main] INFO  resources.CommonModules -Opening website
+21:58:23.144 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+21:58:23.770 [main] DEBUG resources.CommonModules -Exception while waiting for Page Load Request to complete.
+21:58:23.771 [main] ERROR resources.CommonModules -Catching
+org.openqa.selenium.JavascriptException: javascript error: jQuery is not defined
+  (Session info: chrome=85.0.4183.121)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'localhost.localdomain', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.18.0-193.19.1.el8_2.x86_64', java.version: '11.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /tmp/.com.google.Chrome.nt7ezD}, goog:chromeOptions: {debuggerAddress: localhost:46865}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: f59e129a50ed2be42c14029f481734f8
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.lambda$1(CommonModules.java:377) ~[classes/:?]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.waitForPageLoaded(CommonModules.java:377) ~[classes/:?]
+	at resources.CommonModules.openURL(CommonModules.java:206) ~[classes/:?]
+	at resources.CommonModules.loadURL(CommonModules.java:86) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:61) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:366) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:320) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:764) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:585) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1069) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1037) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77) [testng-remote.jar:?]
+21:58:23.968 [main] DEBUG resources.CommonModules -Checking if the title of the webpage is as expected.
+21:58:24.060 [main] INFO  resources.CommonModules -URL: https:\\amazon.in opened successfully.
+21:58:24.092 [main] INFO  searchSort.searchSortAZ.SearchSort -TESTCASE: searchProductCheck 
+21:58:24.093 [main] INFO  resources.CommonModules -Entering product name in the search bar
+21:58:31.899 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+21:58:32.982 [main] DEBUG resources.CommonModules -Exception while waiting for Page Load Request to complete.
+21:58:32.982 [main] ERROR resources.CommonModules -Catching
+org.openqa.selenium.JavascriptException: javascript error: jQuery is not defined
+  (Session info: chrome=85.0.4183.121)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'localhost.localdomain', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.18.0-193.19.1.el8_2.x86_64', java.version: '11.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /tmp/.com.google.Chrome.nt7ezD}, goog:chromeOptions: {debuggerAddress: localhost:46865}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: f59e129a50ed2be42c14029f481734f8
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.lambda$1(CommonModules.java:377) ~[classes/:?]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.waitForPageLoaded(CommonModules.java:377) ~[classes/:?]
+	at resources.CommonModules.searchProduct(CommonModules.java:654) ~[classes/:?]
+	at searchSort.searchSortAZ.SearchSort.searchProductCheck(SearchSort.java:26) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:764) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:585) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1069) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1037) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77) [testng-remote.jar:?]
+21:58:33.384 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+21:58:33.385 [main] INFO  searchSort.searchSortAZ.SearchSort -Find the total no. of search result pages.
+21:58:36.484 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+21:58:36.484 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 1
+21:58:45.852 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:2
+21:58:45.853 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+21:58:46.471 [main] DEBUG resources.CommonModules -Exception while waiting for Page Load Request to complete.
+21:58:46.471 [main] ERROR resources.CommonModules -Catching
+org.openqa.selenium.JavascriptException: javascript error: jQuery is not defined
+  (Session info: chrome=85.0.4183.121)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'localhost.localdomain', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.18.0-193.19.1.el8_2.x86_64', java.version: '11.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /tmp/.com.google.Chrome.nt7ezD}, goog:chromeOptions: {debuggerAddress: localhost:46865}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: f59e129a50ed2be42c14029f481734f8
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.lambda$1(CommonModules.java:377) ~[classes/:?]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.waitForPageLoaded(CommonModules.java:377) ~[classes/:?]
+	at resources.CommonModules.getParamFromAllPages(CommonModules.java:517) ~[classes/:?]
+	at searchSort.searchSortAZ.SearchSort.searchProductCheck(SearchSort.java:31) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:764) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:585) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1069) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1037) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77) [testng-remote.jar:?]
+21:58:46.581 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+21:58:46.581 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 2
+21:58:56.033 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:3
+21:58:56.033 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+21:58:56.095 [main] DEBUG resources.CommonModules -Exception while waiting for Page Load Request to complete.
+21:58:56.095 [main] ERROR resources.CommonModules -Catching
+org.openqa.selenium.JavascriptException: javascript error: jQuery is not defined
+  (Session info: chrome=85.0.4183.121)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'localhost.localdomain', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.18.0-193.19.1.el8_2.x86_64', java.version: '11.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /tmp/.com.google.Chrome.nt7ezD}, goog:chromeOptions: {debuggerAddress: localhost:46865}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: f59e129a50ed2be42c14029f481734f8
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.lambda$1(CommonModules.java:377) ~[classes/:?]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.waitForPageLoaded(CommonModules.java:377) ~[classes/:?]
+	at resources.CommonModules.getParamFromAllPages(CommonModules.java:517) ~[classes/:?]
+	at searchSort.searchSortAZ.SearchSort.searchProductCheck(SearchSort.java:31) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:764) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:585) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1069) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1037) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77) [testng-remote.jar:?]
+21:58:56.230 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+21:58:56.231 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 3
+21:59:05.403 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:4
+21:59:05.404 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+21:59:05.476 [main] DEBUG resources.CommonModules -Exception while waiting for Page Load Request to complete.
+21:59:05.477 [main] ERROR resources.CommonModules -Catching
+org.openqa.selenium.JavascriptException: javascript error: jQuery is not defined
+  (Session info: chrome=85.0.4183.121)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'localhost.localdomain', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.18.0-193.19.1.el8_2.x86_64', java.version: '11.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /tmp/.com.google.Chrome.nt7ezD}, goog:chromeOptions: {debuggerAddress: localhost:46865}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: f59e129a50ed2be42c14029f481734f8
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.lambda$1(CommonModules.java:377) ~[classes/:?]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.waitForPageLoaded(CommonModules.java:377) ~[classes/:?]
+	at resources.CommonModules.getParamFromAllPages(CommonModules.java:517) ~[classes/:?]
+	at searchSort.searchSortAZ.SearchSort.searchProductCheck(SearchSort.java:31) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:764) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:585) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1069) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1037) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77) [testng-remote.jar:?]
+21:59:05.623 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+21:59:05.625 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 4
+21:59:15.889 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:5
+21:59:15.889 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+21:59:15.960 [main] DEBUG resources.CommonModules -Exception while waiting for Page Load Request to complete.
+21:59:15.960 [main] ERROR resources.CommonModules -Catching
+org.openqa.selenium.JavascriptException: javascript error: jQuery is not defined
+  (Session info: chrome=85.0.4183.121)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'localhost.localdomain', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.18.0-193.19.1.el8_2.x86_64', java.version: '11.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /tmp/.com.google.Chrome.nt7ezD}, goog:chromeOptions: {debuggerAddress: localhost:46865}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: f59e129a50ed2be42c14029f481734f8
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.lambda$1(CommonModules.java:377) ~[classes/:?]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.waitForPageLoaded(CommonModules.java:377) ~[classes/:?]
+	at resources.CommonModules.getParamFromAllPages(CommonModules.java:517) ~[classes/:?]
+	at searchSort.searchSortAZ.SearchSort.searchProductCheck(SearchSort.java:31) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:764) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:585) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1069) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1037) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77) [testng-remote.jar:?]
+21:59:16.111 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+21:59:16.112 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 5
+21:59:25.662 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:6
+21:59:25.666 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+21:59:25.736 [main] DEBUG resources.CommonModules -Exception while waiting for Page Load Request to complete.
+21:59:25.737 [main] ERROR resources.CommonModules -Catching
+org.openqa.selenium.JavascriptException: javascript error: jQuery is not defined
+  (Session info: chrome=85.0.4183.121)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'localhost.localdomain', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.18.0-193.19.1.el8_2.x86_64', java.version: '11.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /tmp/.com.google.Chrome.nt7ezD}, goog:chromeOptions: {debuggerAddress: localhost:46865}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: f59e129a50ed2be42c14029f481734f8
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.lambda$1(CommonModules.java:377) ~[classes/:?]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.waitForPageLoaded(CommonModules.java:377) ~[classes/:?]
+	at resources.CommonModules.getParamFromAllPages(CommonModules.java:517) ~[classes/:?]
+	at searchSort.searchSortAZ.SearchSort.searchProductCheck(SearchSort.java:31) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:764) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:585) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1069) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1037) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77) [testng-remote.jar:?]
+21:59:25.894 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+21:59:25.895 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 6
+21:59:36.007 [main] DEBUG resources.CommonModules -Exception while executing method getParamFromAllPages. Movin to next testcase.
+21:59:36.008 [main] ERROR resources.CommonModules -Catching
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//li[@class='a-selected']"}
+  (Session info: chrome=85.0.4183.121)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'localhost.localdomain', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.18.0-193.19.1.el8_2.x86_64', java.version: '11.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /tmp/.com.google.Chrome.nt7ezD}, goog:chromeOptions: {debuggerAddress: localhost:46865}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: f59e129a50ed2be42c14029f481734f8
+*** Element info: {Using=xpath, value=//li[@class='a-selected']}
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315) ~[client-combined-3.141.59.jar:1.3]
+	at resources.SearchResultPage.getCurrentPageNo(SearchResultPage.java:210) ~[classes/:?]
+	at resources.CommonModules.getParamFromAllPages(CommonModules.java:512) ~[classes/:?]
+	at searchSort.searchSortAZ.SearchSort.searchProductCheck(SearchSort.java:31) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:764) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:585) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1069) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1037) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77) [testng-remote.jar:?]
+21:59:36.034 [main] DEBUG resources.CommonModules -Taking screenshot.
+21:59:37.430 [main] DEBUG resources.CommonModules -Taking screenshot.
+21:59:39.499 [main] DEBUG resources.CommonModules -Taking screenshot.
+21:59:41.126 [main] DEBUG resources.CommonModules -Taking screenshot.
+21:59:42.469 [main] DEBUG resources.CommonModules -Taking screenshot.
+21:59:45.192 [main] INFO  resources.CommonModules -Opening website
+21:59:53.779 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+21:59:53.819 [main] DEBUG resources.CommonModules -Exception while waiting for Page Load Request to complete.
+21:59:53.820 [main] ERROR resources.CommonModules -Catching
+org.openqa.selenium.JavascriptException: javascript error: jQuery is not defined
+  (Session info: chrome=85.0.4183.121)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'localhost.localdomain', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.18.0-193.19.1.el8_2.x86_64', java.version: '11.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /tmp/.com.google.Chrome.ZdXe6e}, goog:chromeOptions: {debuggerAddress: localhost:41433}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 782131967f91daa9e0072332e431eb31
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.lambda$1(CommonModules.java:377) ~[classes/:?]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.waitForPageLoaded(CommonModules.java:377) ~[classes/:?]
+	at resources.CommonModules.openURL(CommonModules.java:206) ~[classes/:?]
+	at resources.CommonModules.loadURL(CommonModules.java:86) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:61) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:366) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:320) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:764) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:585) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1069) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1037) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77) [testng-remote.jar:?]
+21:59:53.838 [main] DEBUG resources.CommonModules -Checking if the title of the webpage is as expected.
+21:59:53.896 [main] INFO  resources.CommonModules -URL: https:\\amazon.in opened successfully.
+21:59:53.900 [main] INFO  resources.CommonModules -Entering product name in the search bar
+22:00:04.671 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+22:00:05.828 [main] DEBUG resources.CommonModules -Exception while waiting for Page Load Request to complete.
+22:00:05.828 [main] ERROR resources.CommonModules -Catching
+org.openqa.selenium.JavascriptException: javascript error: jQuery is not defined
+  (Session info: chrome=85.0.4183.121)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'localhost.localdomain', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.18.0-193.19.1.el8_2.x86_64', java.version: '11.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /tmp/.com.google.Chrome.ZdXe6e}, goog:chromeOptions: {debuggerAddress: localhost:41433}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 782131967f91daa9e0072332e431eb31
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.lambda$1(CommonModules.java:377) ~[classes/:?]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.waitForPageLoaded(CommonModules.java:377) ~[classes/:?]
+	at resources.CommonModules.searchProduct(CommonModules.java:654) ~[classes/:?]
+	at searchSort.searchSortAZ.CheckDeliveryDate.setUp(CheckDeliveryDate.java:18) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:764) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:585) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1069) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1037) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77) [testng-remote.jar:?]
+22:00:06.283 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+22:00:06.299 [main] INFO  searchSort.searchSortAZ.SearchSort -TESTCASE:Check2DaysDeliveryOption
+22:00:06.664 [main] INFO  searchSort.searchSortAZ.SearchSort -Get in 2 days option is available. Going to select the same.
+22:00:08.589 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+22:00:08.652 [main] DEBUG resources.CommonModules -Exception while waiting for Page Load Request to complete.
+22:00:08.653 [main] ERROR resources.CommonModules -Catching
+org.openqa.selenium.JavascriptException: javascript error: jQuery is not defined
+  (Session info: chrome=85.0.4183.121)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'localhost.localdomain', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.18.0-193.19.1.el8_2.x86_64', java.version: '11.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /tmp/.com.google.Chrome.ZdXe6e}, goog:chromeOptions: {debuggerAddress: localhost:41433}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 782131967f91daa9e0072332e431eb31
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.lambda$1(CommonModules.java:377) ~[classes/:?]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.waitForPageLoaded(CommonModules.java:377) ~[classes/:?]
+	at resources.SearchResultPage.selectChkBox(SearchResultPage.java:286) ~[classes/:?]
+	at searchSort.searchSortAZ.CheckDeliveryDate.Check2DaysOption(CheckDeliveryDate.java:61) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:764) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:585) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1069) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1037) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77) [testng-remote.jar:?]
+22:00:08.655 [main] INFO  searchSort.searchSortAZ.SearchSort -Find the total no. of search result pages.
+22:00:15.276 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 1
+22:00:24.881 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Toblerone of Switzerland Milk Chocolate with Honey and Almond Nougat - 2 Pack Pouch, 2 X 100 g
+22:00:25.107 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Toblerone Swiss Dark Chocolate with Honey & Almond Nougat 34 Pieces Pouch, 272 g
+22:00:26.838 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.MYFITNESS Chocolate Peanut Butter 510g
+22:00:26.986 [main] INFO  resources.CommonModules -45 48
+22:00:26.987 [main] INFO  resources.CommonModules -Delivery date values match with selected option for 93.0% of search result items.
+22:00:27.635 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+22:00:27.734 [main] DEBUG resources.CommonModules -Exception while waiting for Page Load Request to complete.
+22:00:27.735 [main] ERROR resources.CommonModules -Catching
+org.openqa.selenium.JavascriptException: javascript error: jQuery is not defined
+  (Session info: chrome=85.0.4183.121)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'localhost.localdomain', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.18.0-193.19.1.el8_2.x86_64', java.version: '11.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /tmp/.com.google.Chrome.ZdXe6e}, goog:chromeOptions: {debuggerAddress: localhost:41433}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 782131967f91daa9e0072332e431eb31
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.lambda$1(CommonModules.java:377) ~[classes/:?]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.waitForPageLoaded(CommonModules.java:377) ~[classes/:?]
+	at resources.SearchResultPage.selectClearDelOption(SearchResultPage.java:259) ~[classes/:?]
+	at searchSort.searchSortAZ.CheckDeliveryDate.Check2DaysOption(CheckDeliveryDate.java:68) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:764) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:585) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1069) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1037) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77) [testng-remote.jar:?]
+22:00:27.743 [main] INFO  searchSort.searchSortAZ.SearchSort -TESTCASE:CheckTodayDeliveryOption
+22:00:32.951 [main] DEBUG searchSort.searchSortAZ.SearchSort -'Get it Today' option is NOT available right now. Skipping. Moving to next testcase 
+22:00:32.952 [main] INFO  searchSort.searchSortAZ.SearchSort -Exception while executing TESTCASE:CheckTodayDeliveryOption. Exiting testcase.
+22:00:32.952 [main] ERROR searchSort.searchSortAZ.SearchSort -Catching
+org.testng.SkipException: 'Get it Today' option is NOT available right now. Skipping. Moving to next testcase 
+	at searchSort.searchSortAZ.CheckDeliveryDate.CheckTodayOption(CheckDeliveryDate.java:45) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:764) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:585) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1069) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1037) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77) [testng-remote.jar:?]
+22:00:32.962 [main] INFO  searchSort.searchSortAZ.SearchSort -TESTCASE:CheckTomorrowDeliveryOption
+22:00:33.412 [main] INFO  searchSort.searchSortAZ.SearchSort -Get by tomorrow option is available. Going to select the same.
+22:00:35.144 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+22:00:35.240 [main] DEBUG resources.CommonModules -Exception while waiting for Page Load Request to complete.
+22:00:35.240 [main] ERROR resources.CommonModules -Catching
+org.openqa.selenium.JavascriptException: javascript error: jQuery is not defined
+  (Session info: chrome=85.0.4183.121)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'localhost.localdomain', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.18.0-193.19.1.el8_2.x86_64', java.version: '11.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /tmp/.com.google.Chrome.ZdXe6e}, goog:chromeOptions: {debuggerAddress: localhost:41433}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 782131967f91daa9e0072332e431eb31
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.lambda$1(CommonModules.java:377) ~[classes/:?]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249) ~[client-combined-3.141.59.jar:1.3]
+	at resources.CommonModules.waitForPageLoaded(CommonModules.java:377) ~[classes/:?]
+	at resources.SearchResultPage.selectChkBox(SearchResultPage.java:286) ~[classes/:?]
+	at searchSort.searchSortAZ.CheckDeliveryDate.CheckTomorrowOption(CheckDeliveryDate.java:91) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:764) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:585) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1069) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1037) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77) [testng-remote.jar:?]
+22:00:35.242 [main] INFO  searchSort.searchSortAZ.SearchSort -Find the total no. of search result pages.
+22:00:40.208 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 1
+22:00:43.075 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Sunfeast Yumfills Whoopie Pie, Chocolate Chip, 253g
+22:00:43.277 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Cadbury Hot Chocolate Drink Powder Mix, 200g
+22:00:43.456 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Cadbury Dairy Milk Chocolate Shots, 208.8 gm Carton (58 units x 3.6 gm)
+22:00:43.644 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Hershey's Chocolate Syrup, 623g
+22:00:43.832 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Dukes Eclairs Chocolate, 200g
+22:00:44.034 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Dukes Waffy Rolls Tin, Chocolate, 300g
+22:00:44.237 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Cadbury Choclairs Gold Home Pack (25 Candies), 137.5 g
+22:00:44.430 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Yogabar Wholegrain Breakfast Muesli, Dark Chocolate + Cranberry, 700 g (Super Saver Pack)
+22:00:44.702 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Hershey's Hot Chocolate Drink Powder Mix, 250g Pack
+22:00:44.912 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Dukes Waffy Biscuits Chocolate, 75g
+22:00:45.533 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Cadbury Oreo Dipped Chocolate Cookie, 150g
+22:00:46.031 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Real Frappe Milkshake - Belgian Chocolate - 180 ml
+22:00:46.249 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Parle Hide and Seek Chocolate Chip Cookies, 200g
+22:00:46.623 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Dark Fantasy Choco Fills, 300g
+22:00:47.112 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Candyman Fantastik Treat Pack, Choco Wafer Rolls, 200g
+22:00:47.882 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Complan Refill, Royale Chocolate, 1kg
+22:00:48.087 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Cadbury Chocobakes Choc Filled Cookies, 600g (150g x 4)
+22:00:48.280 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Milkshake Chocolate, 200 ml (Pack of 6)
+22:00:48.466 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Sunfeast Farmlite Oats with Chocolate, 150g
+22:00:48.662 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Sofit SOYA Milk Chocolate, 200ml (Pack of 6)
+22:00:48.973 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.MRS. BECTOR'S CREMICA Bourbon Chocolate Sandwich Biscuits Pouch, 500 g
+22:00:49.176 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Kellogg's Crunchy Granola Chocolate & Almonds, 450g
+22:00:49.373 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Pediasure 7Plus Chocolate 400 GM BIB
+22:00:49.696 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Hershey's Chocolate Syrup, 1.3kg
+22:00:50.236 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Sundrop Cocoanut Almond Choco Spread, 350 g
+22:00:51.333 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:2
+22:00:51.333 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 2
+22:00:52.562 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Sunfeast Dark Fantasy Choco Fills plus Coffee Fills Combo 75g (Buy 3 Get 1 Free)
+22:00:53.427 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Alpenliebe Cream Fills Butter Toffee, 184g (46 unitsx4g each)
+22:00:53.718 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Hershey's Cocoa Powder, 225g
+22:01:01.267 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:3
+22:01:01.267 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 3
+22:01:02.844 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Horlicks Health & Nutrition Drink Chocolate, 500 g
+22:01:10.219 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:4
+22:01:10.219 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 4
+22:01:18.323 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:5
+22:01:18.324 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 5
+22:01:28.441 [main] DEBUG resources.CommonModules -Exception while executing method getCompDelDate. Moving to next testcase.
+22:01:28.442 [main] ERROR resources.CommonModules -Catching
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//li[@class='a-selected']"}
+  (Session info: chrome=85.0.4183.121)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'localhost.localdomain', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.18.0-193.19.1.el8_2.x86_64', java.version: '11.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.121, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: /tmp/.com.google.Chrome.ZdXe6e}, goog:chromeOptions: {debuggerAddress: localhost:41433}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 782131967f91daa9e0072332e431eb31
+*** Element info: {Using=xpath, value=//li[@class='a-selected']}
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353) ~[client-combined-3.141.59.jar:1.3]
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315) ~[client-combined-3.141.59.jar:1.3]
+	at resources.SearchResultPage.getCurrentPageNo(SearchResultPage.java:210) ~[classes/:?]
+	at resources.CommonModules.getCompDelDate(CommonModules.java:414) ~[classes/:?]
+	at searchSort.searchSortAZ.CheckDeliveryDate.CheckTomorrowOption(CheckDeliveryDate.java:96) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:764) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:585) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1069) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1037) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77) [testng-remote.jar:?]
+22:01:28.454 [main] DEBUG resources.CommonModules -Taking screenshot.
+19:26:44.942 [main] INFO  resources.CommonModules -Going to read input values from excel sheet.
+19:26:45.016 [main] INFO  resources.CommonModules -Opening the excel sheet for reading.
+19:26:45.661 [main] INFO  resources.CommonModules -Input excel sheet opened successfully.
+19:26:45.662 [main] INFO  resources.CommonModules -In input excel sheet-> access sheet named 'input'.
+19:26:52.828 [main] INFO  resources.CommonModules -Opening website
+19:29:20.834 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+19:29:20.869 [main] DEBUG resources.CommonModules -Checking if the title of the webpage is as expected.
+19:29:21.013 [main] INFO  resources.CommonModules -URL: https:\\amazon.in opened successfully.
+19:29:21.042 [main] INFO  resources.CommonModules -Entering product name in the search bar
+19:30:02.789 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+19:30:02.870 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+19:30:02.889 [main] INFO  searchSort.searchSortAZ.SearchSort -TESTCASE: searchProductNameCheck 
+19:30:02.889 [main] INFO  searchSort.searchSortAZ.SearchSort -Find the total no. of search result pages.
+19:30:03.552 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+19:30:03.683 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+19:30:03.683 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 1
+19:30:13.796 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:2
+19:30:13.796 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+19:30:13.855 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 2
+19:30:24.954 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:3
+19:30:24.955 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+19:30:25.004 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 3
+19:30:34.815 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:4
+19:30:34.816 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+19:30:34.864 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 4
+19:30:44.473 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:5
+19:30:44.474 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+19:30:44.511 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 5
+19:30:53.666 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:6
+19:30:53.666 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+19:30:53.700 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 6
+19:31:06.992 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:7
+19:31:06.992 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+19:31:07.026 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 7
+19:31:09.612 [main] INFO  searchSort.searchSortAZ.SearchSort -More than 84.0% of the search result items has product name displayed in it.
+19:31:09.626 [main] INFO  searchSort.searchSortAZ.SearchSort -TESTCASE: setPriceRange
+19:31:09.626 [main] INFO  searchSort.searchSortAZ.SearchSort -Setting min and max price values for the product.
+19:32:35.162 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+19:32:35.291 [main] INFO  searchSort.searchSortAZ.SearchSort -Find the total no. of search result pages.
+19:32:35.930 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+19:32:36.065 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+19:32:36.066 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 1
+19:32:44.127 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:2
+19:32:44.128 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+19:32:44.174 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 2
+19:32:54.425 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:3
+19:32:54.426 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+19:32:54.464 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 3
+19:33:05.416 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:4
+19:33:05.417 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+19:33:05.474 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 4
+19:33:12.056 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:5
+19:33:12.056 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+19:33:12.128 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 5
+19:33:22.110 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:6
+19:33:22.111 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+19:33:22.152 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 6
+19:33:28.794 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:7
+19:33:28.794 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+19:33:28.848 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 7
+19:33:33.926 [main] INFO  searchSort.searchSortAZ.SearchSort -The min and max values set are: 15 and 100
+19:33:33.926 [main] INFO  searchSort.searchSortAZ.SearchSort -Checking if the search results are with configured minPrice and maxPrice.
+19:33:33.928 [main] ERROR searchSort.searchSortAZ.SearchSort -The search results are not with in set min and max price value range.
+19:33:33.941 [main] DEBUG resources.CommonModules -Taking screenshot.
+19:33:34.760 [main] INFO  searchSort.searchSortAZ.SearchSort -TESTCASE: SortByAvgCustomerReview
+19:33:34.760 [main] INFO  searchSort.searchSortAZ.SearchSort -Sorting search result based on Avg Customer review.
+19:33:36.433 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+19:33:36.521 [main] INFO  searchSort.searchSortAZ.SearchSort -Find the total no. of search result pages.
+19:34:13.581 [main] DEBUG resources.CommonModules -Exception while executing method getParamFromAllPages. Movin to next testcase.
+19:34:13.582 [main] ERROR resources.CommonModules -Catching
+java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
+	at jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64) ~[?:?]
+	at jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70) ~[?:?]
+	at jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248) ~[?:?]
+	at java.util.Objects.checkIndex(Objects.java:372) ~[?:?]
+	at java.util.ArrayList.get(ArrayList.java:459) ~[?:?]
+	at resources.SearchResultPage.selectPageNo(SearchResultPage.java:267) ~[classes/:?]
+	at resources.CommonModules.getParamFromAllPages(CommonModules.java:514) ~[classes/:?]
+	at searchSort.searchSortAZ.SearchSort.sortByAvgCustRev(SearchSort.java:185) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:764) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:585) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1069) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1037) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77) [testng-remote.jar:?]
+19:34:13.650 [main] INFO  searchSort.searchSortAZ.SearchSort -Verifying if items are sorted according to customer rating high to low.
+19:34:13.651 [main] INFO  searchSort.searchSortAZ.SearchSort -The search results are sorted correctly according to Avg.Customer review.
+19:34:13.659 [main] INFO  searchSort.searchSortAZ.SearchSort -TESTCASE: sortPriceHighToLow
+19:34:13.659 [main] INFO  searchSort.searchSortAZ.SearchSort -Sorting search result based on Price high to low values.
+19:34:23.120 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+19:34:23.156 [main] INFO  searchSort.searchSortAZ.SearchSort -Find the total no. of search result pages.
+19:34:29.589 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+19:34:29.702 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+19:34:29.702 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 1
+19:34:37.146 [main] INFO  resources.CommonModules -Price for search item Nestle Kitkat Chocolate - 10 X 12.8 Grams (Pack Of 10) is not displayed.
+19:34:43.694 [main] INFO  resources.CommonModules -Price for search item SPICHO - Black Pepper Chocolate Bar (50g) is not displayed.
+19:34:48.877 [main] INFO  resources.CommonModules -Price for search item SPICHO - Cardamom Chocolate Bar (50g) is not displayed.
+19:34:54.017 [main] INFO  resources.CommonModules -Price for search item SPICHO - Nutmeg Chocolate Bar (50g) is not displayed.
+19:34:59.316 [main] INFO  resources.CommonModules -Price for search item Twix Chocolate Bar, 50 g is not displayed.
+19:35:05.698 [main] INFO  resources.CommonModules -Price for search item Sugarless Bliss Chocolate Black Currant Cookies, 100g is not displayed.
+19:35:06.915 [main] INFO  searchSort.searchSortAZ.SearchSort -Verifying if items are sorted according to price high to low.
+19:35:06.915 [main] ERROR searchSort.searchSortAZ.SearchSort -The search results are NOT sorted correctly according to price high to low
+19:35:06.920 [main] DEBUG resources.CommonModules -Taking screenshot.
+19:35:07.910 [main] INFO  searchSort.searchSortAZ.SearchSort -TESTCASE: sortPriceLowToHigh
+19:35:07.911 [main] INFO  searchSort.searchSortAZ.SearchSort -Sorting search result based on Price low to high values.
+19:35:09.851 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+19:35:09.922 [main] INFO  searchSort.searchSortAZ.SearchSort -Find the total no. of search result pages.
+19:35:19.209 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+19:35:19.597 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+19:35:19.598 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 1
+19:35:29.405 [main] INFO  resources.CommonModules -Price for search item Cadbury Gemsâ Chocolate, 21 g is not displayed.
+19:35:35.071 [main] INFO  resources.CommonModules -Price for search item Cadbury Gems Chocolate, 21.36 gm Pack is not displayed.
+19:35:40.505 [main] INFO  resources.CommonModules -Price for search item Nestle KitKat Chocolate 37.3g Pouch is not displayed.
+19:35:45.810 [main] INFO  resources.CommonModules -Price for search item Snickers Chocolate, 25g Pouch is not displayed.
+19:35:51.152 [main] INFO  resources.CommonModules -Price for search item Hungry Chocolate Sprinkles for Cake Decoration 2KG , Sprinkles for Cakes, Chocolate Sprinkles, Vermicelli, Sprinkles (250) is not displayed.
+19:35:57.628 [main] INFO  resources.CommonModules -Price for search item Mars Chocolate Bar, 51g is not displayed.
+19:35:59.057 [main] INFO  searchSort.searchSortAZ.SearchSort -Verifying if items are sorted according to price low to high.
+19:35:59.058 [main] ERROR searchSort.searchSortAZ.SearchSort -The search results are NOT sorted correctly according to price low to high
+19:35:59.063 [main] DEBUG resources.CommonModules -Taking screenshot.
+19:36:01.498 [main] INFO  resources.CommonModules -Opening website
+19:37:49.952 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+19:37:49.998 [main] DEBUG resources.CommonModules -Checking if the title of the webpage is as expected.
+19:37:50.040 [main] INFO  resources.CommonModules -URL: https:\\amazon.in opened successfully.
+19:37:50.044 [main] INFO  resources.CommonModules -Entering product name in the search bar
+19:39:08.811 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+19:39:08.872 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+19:39:08.984 [main] INFO  searchSort.searchSortAZ.SearchSort -TESTCASE:Check2DaysDeliveryOption
+19:39:09.023 [main] INFO  searchSort.searchSortAZ.SearchSort -Get in 2 days option is available. Going to select the same.
+19:39:10.205 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+19:39:10.226 [main] INFO  searchSort.searchSortAZ.SearchSort -Find the total no. of search result pages.
+19:39:18.512 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 1
+19:39:22.166 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Zevic Sugar Free Roasted Almonds with Stevia, 40 gm
+19:39:25.484 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.NATURE 'N' NATURE Gold Coin Milk Chocolates, 135 GMS Round Gift Pack, 60pcs
+19:39:25.845 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Nutella Chocolate Hazelnut Spread, 350 g
+19:39:27.548 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:2
+19:39:27.549 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 2
+19:39:37.525 [main] DEBUG resources.CommonModules -Current page number is returned as '0'. Couldn't find it correctly. Exiting testcase. 
+19:39:37.533 [main] DEBUG resources.CommonModules -Taking screenshot.
+19:39:38.570 [main] INFO  searchSort.searchSortAZ.SearchSort -TESTCASE:CheckTodayDeliveryOption
+19:39:43.666 [main] DEBUG searchSort.searchSortAZ.SearchSort -'Get it Today' option is NOT available right now. Skipping. Moving to next testcase 
+19:39:43.667 [main] INFO  searchSort.searchSortAZ.SearchSort -Exception while executing TESTCASE:CheckTodayDeliveryOption. Exiting testcase.
+19:39:43.667 [main] ERROR searchSort.searchSortAZ.SearchSort -Catching
+org.testng.SkipException: 'Get it Today' option is NOT available right now. Skipping. Moving to next testcase 
+	at searchSort.searchSortAZ.CheckDeliveryDate.CheckTodayOption(CheckDeliveryDate.java:45) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:764) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:585) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1069) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1037) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77) [testng-remote.jar:?]
+19:39:43.675 [main] INFO  searchSort.searchSortAZ.SearchSort -TESTCASE:CheckTomorrowDeliveryOption
+19:39:43.713 [main] INFO  searchSort.searchSortAZ.SearchSort -Get by tomorrow option is available. Going to select the same.
+19:39:44.291 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+19:39:44.338 [main] INFO  searchSort.searchSortAZ.SearchSort -Find the total no. of search result pages.
+19:39:49.763 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 1
+19:39:55.965 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.NATURE 'N' NATURE Gold Coin Milk Chocolates, 135 GMS Round Gift Pack, 60pcs
+19:39:58.639 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:2
+19:39:58.639 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 2
+19:40:08.346 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:3
+19:40:08.346 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 3
+19:40:11.372 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.NATURE 'N' NATURE Gold Coin Milk Chocolates, 230gms Square Gift Pack, 100 pcs
+19:40:11.978 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.NATURE 'N' NATURE Brown Coin Coffee Milk Chocolates, 135gms, Round Gift Pack, 60pcs
+19:40:17.469 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:4
+19:40:17.470 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 4
+19:40:29.001 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:5
+19:40:29.001 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 5
+19:40:33.234 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.NATURE 'N' NATURE Gold Coin Milk Chocolates, 350 GMS Oval Gift Pack, 150 pcs
+19:40:38.748 [main] DEBUG resources.CommonModules -Current page number is returned as '0'. Couldn't find it correctly. Exiting testcase. 
+19:40:38.752 [main] DEBUG resources.CommonModules -Taking screenshot.
+20:31:18.985 [main] INFO  resources.CommonModules -Going to read input values from excel sheet.
+20:31:19.000 [main] INFO  resources.CommonModules -Opening the excel sheet for reading.
+20:31:19.653 [main] INFO  resources.CommonModules -Input excel sheet opened successfully.
+20:31:19.654 [main] INFO  resources.CommonModules -In input excel sheet-> access sheet named 'input'.
+20:31:23.252 [main] INFO  resources.CommonModules -Opening website
+20:31:34.712 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:31:35.437 [main] DEBUG resources.CommonModules -Checking if the title of the webpage is as expected.
+20:31:35.530 [main] INFO  resources.CommonModules -URL: https:\\amazon.in opened successfully.
+20:31:35.587 [main] INFO  resources.CommonModules -Entering product name in the search bar
+20:31:47.781 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:31:48.432 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+20:31:48.449 [main] INFO  searchSort.searchSortAZ.SearchSort -TESTCASE: searchProductNameCheck 
+20:31:48.449 [main] INFO  searchSort.searchSortAZ.SearchSort -Find the total no. of search result pages.
+20:31:51.651 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+20:31:51.777 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+20:31:51.778 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 1
+20:31:56.889 [main] INFO  resources.CommonModules -Name of search item index 0 could not be retrieved. Moving to next item.
+20:32:05.671 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:2
+20:32:05.671 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:32:06.297 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 2
+20:32:11.612 [main] INFO  resources.CommonModules -Name of search item index 0 could not be retrieved. Moving to next item.
+20:32:18.916 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:3
+20:32:18.916 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:32:19.254 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 3
+20:32:24.486 [main] INFO  resources.CommonModules -Name of search item index 0 could not be retrieved. Moving to next item.
+20:32:31.179 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:4
+20:32:31.179 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:32:31.263 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 4
+20:32:37.725 [main] INFO  resources.CommonModules -Name of search item index 0 could not be retrieved. Moving to next item.
+20:32:44.236 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:5
+20:32:44.237 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:32:44.280 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 5
+20:32:50.358 [main] INFO  resources.CommonModules -Name of search item index 0 could not be retrieved. Moving to next item.
+20:32:56.575 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:6
+20:32:56.575 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:32:56.622 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 6
+20:33:02.557 [main] INFO  resources.CommonModules -Name of search item index 0 could not be retrieved. Moving to next item.
+20:33:08.287 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:7
+20:33:08.287 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:33:08.328 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 7
+20:33:14.387 [main] INFO  resources.CommonModules -Name of search item index 0 could not be retrieved. Moving to next item.
+20:33:15.184 [main] INFO  searchSort.searchSortAZ.SearchSort -More than 84.0% of the search result items has product name displayed in it.
+20:33:15.198 [main] INFO  searchSort.searchSortAZ.SearchSort -TESTCASE: setPriceRange
+20:33:15.198 [main] INFO  searchSort.searchSortAZ.SearchSort -Setting min and max price values for the product.
+20:33:20.410 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:33:22.793 [main] INFO  searchSort.searchSortAZ.SearchSort -Find the total no. of search result pages.
+20:33:26.065 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+20:33:26.448 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+20:33:26.448 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 1
+20:33:36.723 [main] INFO  resources.CommonModules -Price for search item INVALID is not displayed.
+20:33:43.586 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:2
+20:33:43.586 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:33:43.641 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 2
+20:33:54.501 [main] INFO  resources.CommonModules -Price for search item INVALID is not displayed.
+20:33:56.131 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:3
+20:33:56.132 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:33:56.170 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 3
+20:34:07.100 [main] INFO  resources.CommonModules -Price for search item INVALID is not displayed.
+20:34:08.581 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:4
+20:34:08.581 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:34:08.620 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 4
+20:34:19.529 [main] INFO  resources.CommonModules -Price for search item INVALID is not displayed.
+20:34:21.014 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:5
+20:34:21.014 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:34:21.068 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 5
+20:34:32.389 [main] INFO  resources.CommonModules -Price for search item INVALID is not displayed.
+20:34:33.892 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:6
+20:34:33.892 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:34:33.935 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 6
+20:34:44.845 [main] INFO  resources.CommonModules -Price for search item INVALID is not displayed.
+20:34:46.328 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:7
+20:34:46.328 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:34:46.373 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 7
+20:34:57.142 [main] INFO  resources.CommonModules -Price for search item INVALID is not displayed.
+20:34:57.708 [main] INFO  searchSort.searchSortAZ.SearchSort -The min and max values set are: 15 and 100
+20:34:57.709 [main] INFO  searchSort.searchSortAZ.SearchSort -Checking if the search results are within configured minPrice and maxPrice.
+20:34:57.710 [main] ERROR searchSort.searchSortAZ.SearchSort -The search results are not with in set min and max price value range.
+20:34:57.721 [main] DEBUG resources.CommonModules -Taking screenshot.
+20:34:58.780 [main] INFO  searchSort.searchSortAZ.SearchSort -TESTCASE: SortByAvgCustomerReview
+20:34:58.780 [main] INFO  searchSort.searchSortAZ.SearchSort -Sorting search result based on Avg Customer review.
+20:35:00.513 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:35:00.570 [main] INFO  searchSort.searchSortAZ.SearchSort -Find the total no. of search result pages.
+20:35:06.453 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+20:35:06.865 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+20:35:06.866 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 1
+20:35:17.422 [main] INFO  resources.CommonModules -Customer review for search item INVALID is not displayed.
+20:35:21.075 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:2
+20:35:21.075 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:35:21.125 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 2
+20:35:32.104 [main] INFO  resources.CommonModules -Customer review for search item INVALID is not displayed.
+20:35:33.299 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:3
+20:35:33.299 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:35:33.349 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 3
+20:35:44.332 [main] INFO  resources.CommonModules -Customer review for search item INVALID is not displayed.
+20:35:45.527 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:4
+20:35:45.528 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:35:45.570 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 4
+20:35:56.501 [main] INFO  resources.CommonModules -Customer review for search item INVALID is not displayed.
+20:36:01.673 [main] INFO  resources.CommonModules -Customer review for search item Kauma: 60% Dark Chocolate bar 90 gm , Orange and Ginger is not displayed.
+20:36:06.799 [main] INFO  resources.CommonModules -Customer review for search item Dipsters Chocolate Dip - Waffle Chips, Carton is not displayed.
+20:36:11.968 [main] INFO  resources.CommonModules -Customer review for search item My Chocolate Chocolate Gift Pouch Dark Blue Potli Net Bag with Chocolates Best for Gift ( 90 Gram) is not displayed.
+20:36:17.164 [main] INFO  resources.CommonModules -Customer review for search item JK Greeting Chocolate I Love You is not displayed.
+20:36:22.486 [main] INFO  resources.CommonModules -Customer review for search item JK Happy Birthday Chocolate Bar is not displayed.
+20:36:27.619 [main] INFO  resources.CommonModules -Customer review for search item NID'Z Dark Omega Super Chocolate 82% Cocoa is not displayed.
+20:36:32.790 [main] INFO  resources.CommonModules -Customer review for search item Kauma 60% Bittersweet Dark Chocolate couverture (90 gm) bar, Kashmiri Chilli and Lime is not displayed.
+20:36:37.964 [main] INFO  resources.CommonModules -Customer review for search item NID'Z Dark Omega Chocolate 77% Cocoa is not displayed.
+20:36:38.771 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:5
+20:36:38.772 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:36:38.831 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 5
+20:36:51.049 [main] INFO  resources.CommonModules -Customer review for search item INVALID is not displayed.
+20:36:56.247 [main] INFO  resources.CommonModules -Customer review for search item Jainco Star Chocolates Multi Shaped Chocolate Box for Kids Special with Toys ( Divided in 4 Parts) is not displayed.
+20:37:01.426 [main] INFO  resources.CommonModules -Customer review for search item JK Fancy Chocolate Pouch 15pc is not displayed.
+20:37:06.612 [main] INFO  resources.CommonModules -Customer review for search item Milk Chocolate Modak 21pc (160gm) is not displayed.
+20:37:11.748 [main] INFO  resources.CommonModules -Customer review for search item Dark Chocolate Modak 11pc (160gm) is not displayed.
+20:37:16.929 [main] INFO  resources.CommonModules -Customer review for search item JK Greeting Chocolate I Love Bro(1 Piece (30 gm) is not displayed.
+20:37:22.072 [main] INFO  resources.CommonModules -Customer review for search item JK Greeting Chocolate Itâ s a Girl is not displayed.
+20:37:27.249 [main] INFO  resources.CommonModules -Customer review for search item JK Greeting Chocolate Happy Friendship Day is not displayed.
+20:37:32.409 [main] INFO  resources.CommonModules -Customer review for search item JK Greeting Chocolate I Love Mom is not displayed.
+20:37:37.560 [main] INFO  resources.CommonModules -Customer review for search item JK Greeting Chocolate Happy Rakhi is not displayed.
+20:37:37.564 [main] INFO  searchSort.searchSortAZ.SearchSort -Verifying if items are sorted according to customer rating high to low.
+20:37:37.565 [main] ERROR searchSort.searchSortAZ.SearchSort -The search results are NOT sorted correctly according to Avg.Customer review
+20:37:37.571 [main] DEBUG resources.CommonModules -Taking screenshot.
+20:37:38.652 [main] INFO  searchSort.searchSortAZ.SearchSort -TESTCASE: sortPriceHighToLow
+20:37:38.652 [main] INFO  searchSort.searchSortAZ.SearchSort -Sorting search result based on Price high to low values.
+20:37:40.524 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:37:40.576 [main] INFO  searchSort.searchSortAZ.SearchSort -Find the total no. of search result pages.
+20:37:46.322 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+20:37:46.707 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+20:37:46.707 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 1
+20:37:57.214 [main] INFO  resources.CommonModules -Price for search item INVALID is not displayed.
+20:38:03.937 [main] INFO  resources.CommonModules -Price for search item Nestle Kitkat Chocolate - 10 X 12.8 Grams (Pack Of 10) is not displayed.
+20:38:10.153 [main] INFO  resources.CommonModules -Price for search item SPICHO - Black Pepper Chocolate Bar (50g) is not displayed.
+20:38:15.390 [main] INFO  resources.CommonModules -Price for search item SPICHO - Cardamom Chocolate Bar (50g) is not displayed.
+20:38:20.587 [main] INFO  resources.CommonModules -Price for search item SPICHO - Nutmeg Chocolate Bar (50g) is not displayed.
+20:38:25.905 [main] INFO  resources.CommonModules -Price for search item Twix Chocolate Bar, 50 g is not displayed.
+20:38:32.231 [main] INFO  resources.CommonModules -Price for search item Sugarless Bliss Chocolate Black Currant Cookies, 100g is not displayed.
+20:38:34.473 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:2
+20:38:34.473 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:38:34.515 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 2
+20:38:45.450 [main] INFO  resources.CommonModules -Price for search item INVALID is not displayed.
+20:38:47.429 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:3
+20:38:47.429 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:38:47.461 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 3
+20:38:58.091 [main] INFO  resources.CommonModules -Price for search item INVALID is not displayed.
+20:39:03.538 [main] INFO  resources.CommonModules -Price for search item Cadbury Oreo Chocolate Creme Biscuit, 120 g Pack is not displayed.
+20:39:09.001 [main] INFO  resources.CommonModules -Price for search item Sugarless Bliss Sugar Free Chocolate and Black Currant Cup Cake, 80G is not displayed.
+20:39:09.917 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:4
+20:39:09.917 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:39:09.964 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 4
+20:39:20.607 [main] INFO  resources.CommonModules -Price for search item INVALID is not displayed.
+20:39:22.418 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:5
+20:39:22.418 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:39:22.476 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 5
+20:39:33.059 [main] INFO  resources.CommonModules -Price for search item INVALID is not displayed.
+20:39:38.377 [main] INFO  resources.CommonModules -Price for search item Mars Chocolate Bar, 51g is not displayed.
+20:39:38.901 [main] INFO  searchSort.searchSortAZ.SearchSort -Verifying if items are sorted according to price high to low.
+20:39:38.902 [main] ERROR searchSort.searchSortAZ.SearchSort -The search results are NOT sorted correctly according to price high to low
+20:39:38.906 [main] DEBUG resources.CommonModules -Taking screenshot.
+20:39:39.609 [main] INFO  searchSort.searchSortAZ.SearchSort -TESTCASE: sortPriceLowToHigh
+20:39:39.610 [main] INFO  searchSort.searchSortAZ.SearchSort -Sorting search result based on Price low to high values.
+20:39:41.672 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:39:41.718 [main] INFO  searchSort.searchSortAZ.SearchSort -Find the total no. of search result pages.
+20:39:47.466 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+20:39:47.860 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+20:39:47.861 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 1
+20:39:58.298 [main] INFO  resources.CommonModules -Price for search item INVALID is not displayed.
+20:40:04.049 [main] INFO  resources.CommonModules -Price for search item Cadbury Gemsâ Chocolate, 21 g is not displayed.
+20:40:09.915 [main] INFO  resources.CommonModules -Price for search item Cadbury Gems Chocolate, 21.36 gm Pack is not displayed.
+20:40:15.477 [main] INFO  resources.CommonModules -Price for search item Nestle KitKat Chocolate 37.3g Pouch is not displayed.
+20:40:20.799 [main] INFO  resources.CommonModules -Price for search item Snickers Chocolate, 25g Pouch is not displayed.
+20:40:26.203 [main] INFO  resources.CommonModules -Price for search item Hungry Chocolate Sprinkles for Cake Decoration 2KG , Sprinkles for Cakes, Chocolate Sprinkles, Vermicelli, Sprinkles (250) is not displayed.
+20:40:32.975 [main] INFO  resources.CommonModules -Price for search item Mars Chocolate Bar, 51g is not displayed.
+20:40:35.495 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:2
+20:40:35.495 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:40:35.544 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 2
+20:40:47.895 [main] INFO  resources.CommonModules -Price for search item INVALID is not displayed.
+20:40:53.529 [main] INFO  resources.CommonModules -Price for search item Nutro Chocolate Wafer Cream Biscuit, 75g is not displayed.
+20:40:58.953 [main] INFO  resources.CommonModules -Price for search item Unibic Chocolate Chip Cookies, 150g is not displayed.
+20:40:59.880 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:3
+20:40:59.880 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:40:59.919 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 3
+20:41:15.032 [main] INFO  resources.CommonModules -Price for search item INVALID is not displayed.
+20:41:20.425 [main] INFO  resources.CommonModules -Price for search item Cadbury Dairy Milk Silk Roast Almond Chocolate Bar, 55 g is not displayed.
+20:41:26.003 [main] INFO  resources.CommonModules -Price for search item Cadbury Dairy Milk Silk Fruit & Nut Chocolate Bar, 55 g is not displayed.
+20:41:26.837 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:4
+20:41:26.838 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:41:26.885 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 4
+20:41:37.570 [main] INFO  resources.CommonModules -Price for search item INVALID is not displayed.
+20:41:42.769 [main] INFO  resources.CommonModules -Price for search item Nestle Munch Chocolate Coated Crunchy Wafer, Share Pack– 222g (20 Bars X 11.1g) is not displayed.
+20:41:48.495 [main] INFO  resources.CommonModules -Price for search item Cadbury Bournville Rich Cocoa Dark Chocolate Bar, 80 gm is not displayed.
+20:41:49.585 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:5
+20:41:49.585 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:41:49.633 [main] INFO  resources.CommonModules -Retrieve items displayed in the search result page: 5
+20:42:00.274 [main] INFO  resources.CommonModules -Price for search item INVALID is not displayed.
+20:42:05.953 [main] INFO  resources.CommonModules -Price for search item Sugarless Bliss Chocolate Black Currant Cookies, 100g is not displayed.
+20:42:06.140 [main] INFO  searchSort.searchSortAZ.SearchSort -Verifying if items are sorted according to price low to high.
+20:42:06.140 [main] ERROR searchSort.searchSortAZ.SearchSort -The search results are NOT sorted correctly according to price low to high
+20:42:06.145 [main] DEBUG resources.CommonModules -Taking screenshot.
+20:42:09.447 [main] INFO  resources.CommonModules -Opening website
+20:42:18.760 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:42:18.811 [main] DEBUG resources.CommonModules -Checking if the title of the webpage is as expected.
+20:42:18.861 [main] INFO  resources.CommonModules -URL: https:\\amazon.in opened successfully.
+20:42:18.864 [main] INFO  resources.CommonModules -Entering product name in the search bar
+20:42:29.411 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:42:30.196 [main] INFO  resources.CommonModules -Search result page displayed successfully.
+20:42:30.205 [main] INFO  searchSort.searchSortAZ.SearchSort -TESTCASE:Check2DaysDeliveryOption
+20:42:30.389 [main] INFO  searchSort.searchSortAZ.SearchSort -Get in 2 days option is available. Going to select the same.
+20:42:31.925 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:42:31.996 [main] INFO  searchSort.searchSortAZ.SearchSort -Find the total no. of search result pages.
+20:42:36.858 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 1
+20:42:38.780 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.4700BC Gourmet Popcorn, Nutty Tuxedo Chocolate, Tin, 125g
+20:42:40.593 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Cadbury Hot Chocolate Drink Powder Mix, 200g (Pack of 2)
+20:42:41.118 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Disano Choco Spread, Chocolate, 300 Gram
+20:42:42.063 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Sri Sri Tattva Ojasvita Chocolate 500g (Pack of 2)
+20:42:42.326 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Cadbury Milk Chocolate Spready, 200g
+20:42:43.546 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Nutella Chocolate Hazelnut Spread, 350 g
+20:42:43.950 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Cadbury Gems Chocolate, 10.68 g (Pack of 84)
+20:42:44.951 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Swiss Miss Dark Chocolate 3 in 1 Hot Cocoa Mix 283gm
+20:42:46.334 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Zevic Sugar Free Roasted Almonds with Stevia, 40 gm
+20:42:46.601 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.MAHAK Eclairs Candies Jar/ and Coconut Jar / Combo Pack of 2 jar / Chocolate Toffee / Milky / Coconut / Gift Pack(Eclair jar + Coconut jar) (Eclair jar + Coconut jar)
+20:42:47.764 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:2
+20:42:47.765 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 2
+20:42:48.973 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Sri Sri Tattva Ojasvita Chocolate 500g (Pack of 2)
+20:42:52.792 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Nutrio 100% Natural Peanut Butter (Crunchy + Chocolate Flavour ) (Unsweetened | 500gm+500gm )(Combo Pack/Pack of 2)
+20:42:54.561 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Nesquik Chocolate Drink, 300 g
+20:42:55.931 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Nutella Chocolate Hazelnut Spread, 350 g
+20:42:56.821 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Prizex Dark Chocolate Chips | Choco Chipps 200gm
+20:42:57.814 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:3
+20:42:57.814 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 3
+20:43:04.030 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Lindt 100g 85% Cocoa Dark Chocolate
+20:43:06.415 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:4
+20:43:06.415 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 4
+20:43:17.194 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:5
+20:43:17.194 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 5
+20:43:19.310 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Flavours Chocolate Chips (Dark) - Gourmet Organic Chocolate - 150 Grams - for Baking / Desserts / ice Creams / Cookies / Brownies / Cakes
+20:43:19.543 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Pramix Premium Dark & White Blend of Chocolate Chips, Chocochips (250 gm)
+20:43:20.323 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Colombian Brew Coffee Double Chocolate Mocha 50g, Mint Chocolate Mocha 50g, Blueberry Chocolate Mocha 50g, Buy 2 Get 1 Free
+20:43:26.783 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:6
+20:43:26.784 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 6
+20:43:27.616 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.better bites Strawberry Chocolate Chips 250gram for Cake Decoration
+20:43:27.978 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Milka Oreo Milk Chocolate Bar Pouch, 2 X 100 g
+20:43:28.406 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Bounty Chocolates - 24 Pcs Box
+20:43:28.959 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Schmitten Milk Chocolate with Nuts & Raisins (70 Gram) (Pack of 6)
+20:43:33.347 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:7
+20:43:33.347 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 7
+20:43:35.963 [main] ERROR resources.CommonModules -Delivery date values does not match with selected optionTwoDaysDelivery option for search result item.Liso Chocolate Spread | Goodness of Rich Belgian Cocoa Powder | Delicious Choco Spread | 100% Vegetarian with No Palm Oil, 400 gm
+20:43:36.986 [main] INFO  resources.CommonModules -74 98
+20:43:36.986 [main] ERROR resources.CommonModules -Delivery date values match with selected option only for 75.0% of search result items.
+20:43:37.531 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:43:37.570 [main] DEBUG resources.CommonModules -Taking screenshot.
+20:43:38.554 [main] INFO  searchSort.searchSortAZ.SearchSort -TESTCASE:CheckTodayDeliveryOption
+20:43:43.907 [main] DEBUG searchSort.searchSortAZ.SearchSort -'Get it Today' option is NOT available right now. Skipping. Moving to next testcase 
+20:43:43.907 [main] INFO  searchSort.searchSortAZ.SearchSort -Exception while executing TESTCASE:CheckTodayDeliveryOption. Exiting testcase.
+20:43:43.908 [main] ERROR searchSort.searchSortAZ.SearchSort -Catching
+org.testng.SkipException: 'Get it Today' option is NOT available right now. Skipping. Moving to next testcase 
+	at searchSort.searchSortAZ.CheckDeliveryDate.CheckTodayOption(CheckDeliveryDate.java:45) ~[test-classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128) ~[org.testng_7.3.0.r202008060316.jar:?]
+	at java.util.ArrayList.forEach(ArrayList.java:1541) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:764) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestRunner.run(TestRunner.java:585) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.runSuites(TestNG.java:1069) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.TestNG.run(TestNG.java:1037) [org.testng_7.3.0.r202008060316.jar:?]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77) [testng-remote.jar:?]
+20:43:43.930 [main] INFO  searchSort.searchSortAZ.SearchSort -TESTCASE:CheckTomorrowDeliveryOption
+20:43:44.240 [main] INFO  searchSort.searchSortAZ.SearchSort -Get by tomorrow option is available. Going to select the same.
+20:43:46.222 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:43:46.237 [main] INFO  searchSort.searchSortAZ.SearchSort -Find the total no. of search result pages.
+20:43:50.823 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 1
+20:43:54.568 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Cadbury Hot Chocolate Drink Powder Mix, 200g
+20:43:54.787 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Dukes Eclairs Chocolate, 200g
+20:43:54.996 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Cadbury Dairy Milk Chocolate Shots, 208.8 gm Carton (58 units x 3.6 gm)
+20:43:55.235 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Sunfeast Yumfills Whoopie Pie, Chocolate Chip, 253g
+20:43:55.513 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Hershey's Hot Chocolate Drink Powder Mix, 250g Pack
+20:43:55.817 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Hershey's Chocolate Syrup, 623g
+20:43:56.213 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Dukes Waffy Rolls Tin, Chocolate, 300g
+20:43:56.866 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Hershey's Chocolate Syrup, 1.3kg
+20:43:57.127 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Cadbury Milk Chocolate Spready 200g
+20:43:57.544 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Funfoods Chocolate Fudge Spread, 350g
+20:43:58.067 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Milkshake Chocolate, 200 ml (Pack of 6)
+20:43:58.317 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Cadbury Choclairs Gold Home Pack (25 Candies), 137.5 g
+20:43:58.839 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Nestle Milkybar Eclairs (100 Pieces)
+20:43:59.091 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Real Frappe Milkshake - Belgian Chocolate - 180 ml
+20:43:59.328 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Pediasure 7Plus Chocolate 400 GM BIB
+20:43:59.614 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Sofit SOYA Milk Chocolate, 200ml (Pack of 6)
+20:44:00.602 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Kellogg's Crunchy Granola Chocolate & Almonds, 450g
+20:44:00.873 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Dark Fantasy Choco Fills, 300g
+20:44:02.292 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Sofit SOYA Milk Chocolate, 1 LTR (Pack of 2)
+20:44:02.726 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Cadbury Oreo Dipped Chocolate Cookie, 150g
+20:44:03.326 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Complan Refill, Royale Chocolate, 1kg
+20:44:04.191 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:2
+20:44:04.191 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 2
+20:44:12.397 [main] INFO  resources.CommonModules -Delivery date details for search item Waffle House Waffle Chocolates- Special Flavour Assorted Box (4 Cookies of Each Flavour)is not displayed.
+20:44:15.666 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:3
+20:44:15.667 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 3
+20:44:19.593 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Sunfeast Farmlite Oats with Chocolate, 150g
+20:44:22.913 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Horlicks Protein Plus Chocolate Container, 400 g
+20:44:23.315 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Hershey's Spreads Cocoa, 150g
+20:44:24.354 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:4
+20:44:24.354 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 4
+20:44:25.264 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Pillsbury Milk Choco Spread, 290g
+20:44:25.610 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Hershey's Milk Booster, 450g
+20:44:30.152 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Hershey's Spreads Cocoa with Almond, 150g
+20:44:33.099 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:5
+20:44:33.099 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 5
+20:44:35.908 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Cadbury 5 Star Chocolate Home Treats, 202g
+20:44:41.740 [main] INFO  resources.CommonModules -Delivery date details for search item Cadbury Bournvita for Women Chocolate Health Drink, 400gis not displayed.
+20:44:44.754 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Candyman Fantastik Mini Treats, Choco Wafer Rolls 200g
+20:44:45.786 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:6
+20:44:45.786 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 6
+20:44:49.457 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Sunfeast Dark Fantasy Choco Fills, 600g
+20:44:49.646 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Nestle Koko Krunch Breakfast Cereal - Strawberry Flavour Burst, 250 g Pouch
+20:44:49.844 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Sunfeast Yumfills Whoopie Pie, Chocolate Chip, 138g
+20:44:57.189 [main] INFO  resources.CommonModules -Successfully found and clicked the page no:7
+20:44:57.190 [main] INFO  resources.CommonModules -Retrieve names of items displayed in the search result page: 7
+20:44:59.604 [main] ERROR resources.CommonModules -Delivery date values does not match with selected TomorrowDelivery  option for search result item.Sunfeast Farmlite Oats and Almonds Bundle Pack, 900g
+20:44:59.916 [main] INFO  resources.CommonModules -73 108
+20:44:59.916 [main] ERROR resources.CommonModules -Delivery date values match with selected option only for 67.0% of search result items.
+20:45:00.973 [main] DEBUG resources.CommonModules -Waiting for page to be loaded.
+20:45:00.996 [main] DEBUG resources.CommonModules -Taking screenshot.

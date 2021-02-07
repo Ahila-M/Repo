@@ -44,10 +44,10 @@ public class Listeners extends CommonModules implements ITestListener {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			log.debug("IOException while taking screenshot of failed testcase.");
-			log.debug(e);
+			log.catching(e);
 		} catch (Exception e) {
 			log.debug("Exception while taking screenshot of failed testcase.");
-			log.debug(e);
+			log.catching(e);
 		}
 		
 	}
@@ -55,7 +55,24 @@ public class Listeners extends CommonModules implements ITestListener {
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		// TODO Auto-generated method stub
-		ITestListener.super.onTestSkipped(result);
+		//ITestListener.super.onTestSkipped(result);
+		String methodName = result.getMethod().getMethodName();
+		try {
+			Object currClass = result.getInstance();
+			WebDriver driver = ((CommonModules)currClass).getDriver();
+			
+			String FilePath = getScreenShot(methodName, driver);
+			log.info("Screenshot taken for the method name: "+methodName+" and is available in path: "+FilePath);
+			//System.out.println(FilePath);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			log.debug("IOException while taking screenshot of failed testcase.");
+			log.catching(e);
+		} catch (Exception e) {
+			log.debug("Exception while taking screenshot of failed testcase.");
+			log.catching(e);
+		}
 	}
 
 	@Override

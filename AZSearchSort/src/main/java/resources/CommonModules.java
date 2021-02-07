@@ -1,11 +1,10 @@
+
 package resources;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -15,13 +14,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.poi.hssf.usermodel.HSSFDataFormatter;
+
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.commons.io.*;
-
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.openqa.selenium.JavascriptExecutor;
@@ -34,10 +32,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.SkipException;
 import org.testng.annotations.AfterClass;
 //import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
@@ -53,7 +51,8 @@ public class CommonModules {
 	protected HomePage hp;
 	protected SearchResultPage sr;
 	protected static HashMap<String, String> inputValues;
-	//= new HashMap<String,String>();
+	private FileInputStream fis;
+	private HSSFWorkbook workbook;
 	
 	//Declare objects of GetDateDetails -a class to instantiate objects with date details 
 	private GetDateDetails todayDet;
@@ -72,11 +71,9 @@ public class CommonModules {
 		readExcelSheet(ResourcesPath);
 	}
 	//Method to open URL before executing a class of tests 
-	@BeforeClass
-	@Parameters("ResourcesPath")
-	public void loadURL(String ResourcesPath) {
-		//Temporarily filled up browserName
-		String browserName = "firefox";
+	@BeforeClass(alwaysRun=true)
+	@Parameters({"ResourcesPath","browserName"})
+	public void loadURL(String ResourcesPath,String browserName) {
 		//Call openBrowser function to create and get driver details.
 		openBrowser(ResourcesPath,browserName);
 		//Calling page Object models for initialization of POM class files
@@ -99,99 +96,86 @@ public class CommonModules {
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments("--no-sandbox");
 				driver = new ChromeDriver(options);
-				wait = new WebDriverWait(driver,60);
-				driver.manage().window().maximize();
+			} 
 			//For Firefox
-			} else if (browserName.equalsIgnoreCase("Firefox")) {
+			else if (browserName.equalsIgnoreCase("Firefox")) {
 				System.setProperty("webdriver.gecko.driver",DriverPath+"/geckodriver");
 				driver = new FirefoxDriver();
-				wait = new WebDriverWait(driver,60);
-				driver.manage().window().maximize();
+			} 
 			//for IE
-			} else if (browserName.equalsIgnoreCase("IE")) {
+			else if (browserName.equalsIgnoreCase("IE")) {
 				System.setProperty("webdriver.ie.driver",DriverPath+"/IEDriverServer.exe");
 				driver = new InternetExplorerDriver();
-				wait = new WebDriverWait(driver,60);
-				driver.manage().window().maximize();
-			}else {//Invalid browser name input scenario
+			}
+			else {//Invalid browser name input scenario
 				log.fatal("Provided browser name doesnt match with existing browser drivers. Please check configuration.");
 				log.fatal("Cannot continue execution");
 				System.exit(1);
 			}
+			wait = new WebDriverWait(driver,60);
+			driver.manage().window().maximize();
 		} catch (Exception e) {
-			log.debug(e);
+			log.catching(e);
 			log.fatal("Exception while opening browser. Cannot continue testing. Exiting.");
 			System.exit(1);
 		}
-		
-		//return driver;
 	}
-
 	//reads excel sheet with sheetpath as input 
 	//and creates hashmap of columns InputParameter as Key and InputValues as value of the hashmap.  
 	public void readExcelSheet(String ResourcesPath) {
-		int paramColIndex, valueColIndex;
 		try {
 			// Open the excel sheet for reading
 			log.info("Opening the excel sheet for reading.");
-			FileInputStream fis = new FileInputStream(ResourcesPath+"/DataSheet.xls");
+			fis = new FileInputStream(ResourcesPath+"/DataSheet.xls");
 			// Access Excel sheet
-			HSSFWorkbook workbook = new HSSFWorkbook(fis);
+			workbook = new HSSFWorkbook(fis);
 			log.info("Input excel sheet opened successfully.");
-
-			if (workbook != null) {
-				log.info("In input excel sheet-> access sheet named 'input'.");
-				//Open the sheet 'input' from input excel sheet
-				HSSFSheet inputsheet = workbook.getSheet("input");
-				if (inputsheet != null) {
-					// Find first row
-					int startRow = inputsheet.getFirstRowNum();
-
-					Row firstRow = inputsheet.getRow(startRow);
-					// Find column index of the input parameters and their values from the excel sheet
-					paramColIndex = getColIndex(inputsheet, firstRow, "InputParameter");
-					valueColIndex = getColIndex(inputsheet, firstRow, "InputValues");
-					
-					// Forming HashMap with parameters and values retrieved from the excel sheet
-					if (paramColIndex != -1 && valueColIndex != -1) {
-						//Call getParamValues method with parameters of column Index which creates Hashmap inputValues
-						getParamValues(inputsheet, paramColIndex, valueColIndex);
-					} else {
-						log.debug("'InputParameter' and 'InputValues' keys are not available in the first row of the excel sheet.");
-						log.debug("Unable to continue testing. Hence exiting.");
-						workbook.close();
-						fis.close();
-						System.exit(1);
-					}
-
-				} else {
-					log.info("The 'input' sheet of the excel sheet returned null. Could not open the 'input' sheet in the excel sheet.");
-					log.debug("Unable to continue testing. Hence exiting.");
-					workbook.close();
-					fis.close();
-					System.exit(1);
-				}
+			
+			log.info("In input excel sheet-> access sheet named 'input'.");
+			// Open the sheet 'input' from input excel sheet
+			HSSFSheet inputsheet = workbook.getSheet("input");
+			if (inputsheet != null) {
+				getParamValues(inputsheet);
+			} else {
+				log.debug("Please check if sheet named 'input' is present in the excel sheet. Returned null while opening.");
+				closeExcelOnError();
 			}
 			//Closing excel sheet after reading all values 
 			workbook.close();
 			fis.close();
-			System.exit(1);
 		  } 
-	
+		catch(FileNotFoundException e) {
+			log.fatal("The input excel sheet is not found in the location or could not be opened.Cannot continue. Exiting.");
+			log.catching(e);
+			closeExcelOnError();
+		}
 		catch(IOException e)  
         {  
-			log.fatal("The input excel sheet is not found in the location or could not be opened.Cannot continue. Exiting.");
-            log.debug(e);
-            System.exit(1);
+			log.fatal("The input excel sheet cannot be read successfully.Cannot continue. Exiting.");
+			log.catching(e);
+			closeExcelOnError();
         }      
         catch(Exception e)  
         {   log.debug("Exception during opening and reading input excel sheet. Cannot continue. Exiting.");
-        	log.debug(e);
-        	System.exit(1);
-        	
+        	log.catching(e);
+        	closeExcelOnError();
         }     
 		
 	}
+	//Closeout input excel sheet when an error occurs
+	public void closeExcelOnError() {
+		try {
+		log.debug("Unable to continue testing. Hence exiting.");
+		workbook.close();
+		fis.close();
+		System.exit(1);
+		} catch (Exception e) {
+			log.debug("Exeption while closing input excel sheet.");
+			log.catching(e);
+		}
+		
+	}
+
 	//Return the hashmap data from input excel sheet when requested 
 	public HashMap<String,String> getexcelValues() {
 		return inputValues;
@@ -207,7 +191,7 @@ public class CommonModules {
 	//Open URL to be tested
 	public void openURL(){
 		
-		Boolean result = null;
+		Boolean result;
 		if (driver != null) {
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 			
@@ -228,90 +212,130 @@ public class CommonModules {
 				//System.out.println(result);
 			}
 			catch (Exception e) {
-				log.debug("Exception during Opening URL "+inputValues.get("URL")+". Unable to continue the testcase.");
-				log.debug(e);
+				log.catching(e);
+				throw new SkipException("Exception during Opening URL "+inputValues.get("URL")+". Unable to continue the testcase.");
 			}
 			
-			if(result!=null){
+			if(result == true){
 				log.info("URL: "+inputValues.get("URL")+" opened successfully.");
 			} else {
-				log.error("Opening URL "+inputValues.get("URL")+" failed.May not be able to continue testing.");
+				throw new SkipException("Opening URL "+inputValues.get("URL")+" failed.May not be able to continue testing.");
+				
 			}
-			
-		}else {
+		} else {
 			log.debug("driver value is null while executing mehod 'openURL'. Unable to proceed.");
+			throw new SkipException("driver value is null while executing method 'openURL'. Unable to proceed.");
 		}
 	
 	}
 	//Method to get Screen shot 
 	public String getScreenShot(String methodName,WebDriver driver) throws IOException {
-		
-		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		//Getting formatted times tamp
 		String timestamp = new SimpleDateFormat("dd-MM-YYYY_HH-mm-ss").format(new Date());
+		//Creating dest file name inside logReports folder with method name and time stamp
 		String destFileName = System.getProperty("user.dir")+"/logReports/"+methodName+timestamp+".png";
-		File dest = new File(destFileName);
-		FileUtils.copyFile(src, dest);
+		log.debug("Taking screenshot.");
+		try {
+			File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			File dest = new File(destFileName);
+			FileUtils.copyFile(src, dest);
+			
+		} catch (Exception e) {
+			log.debug("Exception while taking screenshot. ");
+			log.catching(e);
+		}
 		return destFileName;
-		
 	}
 	//Read parameter name and parameter values and make it into an HashMap from input excel sheet
-	public void getParamValues(HSSFSheet inputsheet, int paramColIndex, int valueColIndex) {
+	public void getParamValues (HSSFSheet inputsheet) {
+		try {
+		// Find first and last row
 		int startRow = inputsheet.getFirstRowNum();
 		int endRow = inputsheet.getLastRowNum();
-		inputValues = new HashMap<String,String>();
-		for(int r = startRow; r<=endRow;r++ ) {
-			Cell pCell = inputsheet.getRow(r).getCell(paramColIndex);
-			Cell vCell = inputsheet.getRow(r).getCell(valueColIndex);
-			String pData = getCellData(pCell);
-			String vData = getCellData(vCell);
-			inputValues.put(pData, vData);
+		int paramColIndex, valueColIndex;
+		inputValues = new HashMap<String, String>();
+
+		if (startRow != -1 && endRow != -1) {
+			Row firstRow = inputsheet.getRow(startRow);
+			if (firstRow != null) {
+				// Find column index of the input parameters and their values from the excel
+				// sheet
+				paramColIndex = getColIndex(inputsheet, firstRow, "InputParameter");
+				valueColIndex = getColIndex(inputsheet, firstRow, "InputValues");
+
+				// Forming HashMap with parameters and values retrieved from the excel sheet
+				if (paramColIndex != -1 && valueColIndex != -1) {
+					// Use parameters of column Index which to create Hashmap inputValues
+					for (int r = startRow; r <= endRow; r++) {
+						Cell pCell = inputsheet.getRow(r).getCell(paramColIndex);
+						Cell vCell = inputsheet.getRow(r).getCell(valueColIndex);
+
+						if (pCell != null && vCell != null) {
+							String pData = getCellDataValue(pCell);
+							String vData = getCellDataValue(vCell);
+							if (pData != null && vData != null) {
+								inputValues.put(pData, vData);
+							} else {
+								log.debug("Reading cell" + pCell + " and/or " + vCell
+										+ " has returned null.Please Check.");
+								closeExcelOnError();
+							}
+						} else {
+							log.debug("Locating cell in input excel sheet by using row and column indeces returned null. Please check.");
+							closeExcelOnError();
+						}
+					}
+
+				} else {
+					log.debug("'InputParameter' and 'InputValues' keys are not available in the first row of the excel sheet.");
+					closeExcelOnError();
+				}
+			} else {
+				log.debug("Starting row of the 'input' sheet could not be retrieved.");
+				closeExcelOnError();
+			}
+		} else {
+			log.debug("Please check if 'input' sheet contains content. First row returned invalid value. ");
+			closeExcelOnError();
 		}
-		
-		//return hashMap;
+		} catch (Exception e) {
+			log.debug("Exception during reading values from Input excel sheet.");
+			log.catching(e);
+			closeExcelOnError();
+		}
 	}
 	//Find if a particular String is present in a given row in the input excel sheet and return the column number  
 	public int getColIndex(HSSFSheet inputsheet, Row row, String expValue) {
 		int colIndex=-1;
-		
-		for (int columnNo = 0; columnNo < row.getLastCellNum(); columnNo++) {
-			Cell cell = row.getCell(columnNo) ;
-//			System.out.println("cell:"+cell);
-//			System.out.println(cell.getCellType());
-			String cellValue = getCellData(cell);
-			if (cellValue.equalsIgnoreCase(expValue) ){
-				colIndex = cell.getColumnIndex();
+		short maxColIndex = row.getLastCellNum();
+		if(maxColIndex!= -1) {
+			for (int columnNo = 0; columnNo < maxColIndex; columnNo++) {
+				Cell cell = row.getCell(columnNo) ;
+				if(cell!=null) {
+					String cellValue = getCellDataValue(cell);
+					if (cellValue.equalsIgnoreCase(expValue) ){
+						colIndex = cell.getColumnIndex();
+					}
+				}
 			}
-			
-		}
+		}else {
+			log.debug("Couldn't retrieve column index. returned invalid value. Unable to continue.");
+			closeExcelOnError();
+		} 
 		return colIndex;
 	}
 	//Read input data excel sheet data in the corresponding format and return as a String.
-	public String getCellData(Cell cell) {
+	public String getCellDataValue(Cell cell) {
 		
-		String value = null;
-		if (cell == null) {
-			return null;
-		}
+		String value;
 		switch (cell.getCellType()) {
         case STRING:
             value = cell.getStringCellValue();
             break;
-        case FORMULA:
-            value = cell.getCellFormula();
-            break;
         case NUMERIC:
-            HSSFDataFormatter dataFormatter = new HSSFDataFormatter();
-            value = dataFormatter.formatCellValue(cell);
+        	String numValue = Double.toString(cell.getNumericCellValue());
+        	value = numValue.split("\\.")[0];
             break;
-        case BLANK:
-            value = null;
-            break;
-        case ERROR:
-            value = "#ERROR#";
-            break;
-		case _NONE:
-			value = null;
-			break;
 		default:
 			value = null;
 			break;
@@ -324,62 +348,70 @@ public class CommonModules {
 		 if(Character.isLowerCase(string.charAt(0))) {    
 	           //Convert it into upper case using toUpperCase() function    
 			 String newString = Character.toUpperCase(string.charAt(0))+string.substring(1, string.length());
-	           //System.out.println(newString);
 			 return newString;
 	     } else {
 	    	 //Convert it into lower case using toUpperCase() function    
 	    	   String newString = Character.toLowerCase(string.charAt(0))+string.substring(1, string.length());
-	           //System.out.println(newString);
 	    	   return newString;
 		}
 	}
 	//Wait for webpage to be reloaded completely before continuing with further test steps
 	public void waitForPageLoaded() {
-		log.debug("Waiting for page to be loaded.");
-		ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>()
-		{
-			@Override
-			public Boolean apply(WebDriver driver) {
-				// TODO Auto-generated method stub
-				return ((JavascriptExecutor)driver).executeScript("return document.readyState").equals("complete");
-			}
-		};
-		//WebDriverWait wait = new WebDriverWait(driver,40);
 		try {
-			Thread.sleep(3000);
-			wait.until(expectation);
-			//System.out.println("waiting over.");
-		} catch (Exception e){
-			log.debug(e);
-			log.debug("Timeout waiting for Page Load Request to complete.");
-			Assert.fail();
-			
+		log.debug("Waiting for page to be loaded.");
+		WebDriverWait waittoReady = new WebDriverWait(driver,60);
+		waittoReady.until(driver -> ((JavascriptExecutor)driver).executeScript("return document.readyState").equals("complete"));
+		} catch (Exception e) {
+			log.debug("Exception while waiting for Page Load Request to complete.");
+			log.catching(e);
 		}
 	}
 	//Get and Compare Delivery date displayed in the result item with the delivery option (Today,Tomorrow or TwoDays) you have chosen
 	public boolean getCompDelDate(Integer noOfPages, String param) {
 		Integer totalSearchItems = 0, matchCounter=0; //Counters to decide whether test case passed or failed
-	
-		if (noOfPages != 0) {
-			for (int n = 1; n <= noOfPages; n++) {
-				if (n != sr.getCurrentPageNo()) {
-					// select next page.
-					if (sr.selectPageNo(n)) {
-						log.info("Successfully found and clicked the page no:" + n);
+		Boolean resultflag=false;
+		try {
+			if (noOfPages != 0) {
+				for (int n = 1; n <= noOfPages; n++) {
+					Integer currPage = sr.getCurrentPageNo();
+					if(currPage!=0) {
+						if (n != currPage) {
+							// select next page.
+							if (sr.selectPageNo(n)) {
+								log.info("Successfully found and clicked the page no:" + n);
+							}
+						}
+					}else {
+						log.debug("Current page number is returned as '0'. Couldn't find it correctly. Exiting testcase. ");
+						Assert.fail();
 					}
-				}
-				log.info("Retrieve names of items displayed in the search result page: " + n);
-				// Part1 get the list of items displayed in the search result page.
-				List<WebElement> resultItems = sr.resultItems();
-				
-				//Add no.of search result items to find total no. of search items across all pages.
-				totalSearchItems = totalSearchItems + resultItems.size();
-				switch(param) {
-				  case "TodayDelivery":
-					  for (int i = 1; i <= resultItems.size(); i++) {
+					log.info("Retrieve names of items displayed in the search result page: " + n);
+					// Part1 get the list of items displayed in the search result page.
+					List<WebElement> resultItems = sr.resultItems();
+					
+					//Add no.of search result items to find total no. of search items across all pages.
+					totalSearchItems = totalSearchItems + resultItems.size();
+					switch(param) {
+					  case "TodayDelivery":
+						  for (int i = 1; i <= resultItems.size(); i++) {
+								if(sr.delDateIsPresent(i) > 0) {
+									HashMap<String,String> hmDate = sr.resultItemDeliveryDate(i);
+									if (compareDelDate(hmDate,"today")) {
+										//log.info("Delivery date values match with selected "+param+" option for search result item."+ sr.resultItemName(i));
+										matchCounter++;
+									}else {
+										log.error("Delivery date values does not match with selected option"+param+" option for search result item."+ sr.resultItemName(i));
+									}
+								} else {
+									log.info("Delivery date details for search item " + sr.resultItemName(i) + "is not displayed.");
+								}
+							}
+						  break;  
+					  case "TwoDaysDelivery":
+						for (int i = 1; i <= resultItems.size(); i++) {
 							if(sr.delDateIsPresent(i) > 0) {
 								HashMap<String,String> hmDate = sr.resultItemDeliveryDate(i);
-								if (compareDelDate(hmDate,"today")) {
+								if (compareDelDate(hmDate,"twoDaysMore")) {
 									//log.info("Delivery date values match with selected "+param+" option for search result item."+ sr.resultItemName(i));
 									matchCounter++;
 								}else {
@@ -389,63 +421,59 @@ public class CommonModules {
 								log.info("Delivery date details for search item " + sr.resultItemName(i) + "is not displayed.");
 							}
 						}
-					  break;  
-				  case "TwoDaysDelivery":
-					for (int i = 1; i <= resultItems.size(); i++) {
-						if(sr.delDateIsPresent(i) > 0) {
-							HashMap<String,String> hmDate = sr.resultItemDeliveryDate(i);
-							if (compareDelDate(hmDate,"twoDaysMore")) {
-								//log.info("Delivery date values match with selected "+param+" option for search result item."+ sr.resultItemName(i));
-								matchCounter++;
-							}else {
-								log.error("Delivery date values does not match with selected option"+param+" option for search result item."+ sr.resultItemName(i));
-							}
-						} else {
-							log.info("Delivery date details for search item " + sr.resultItemName(i) + "is not displayed.");
-						}
-					}
-				  break;
-				  case "TomorrowDelivery":
-					for (int i = 1; i <= resultItems.size(); i++) {
-
-						if(sr.delDateIsPresent(i) > 0) {
-							HashMap<String,String> hmDate = sr.resultItemDeliveryDate(i);
-							
-							if (compareDelDate(hmDate,"tomorrow")) {
-								//log.info("Delivery date values match with selected "+param+" option for search result item."+ sr.resultItemName(i));
-								matchCounter++;
+					  break;
+					  case "TomorrowDelivery":
+						for (int i = 1; i <= resultItems.size(); i++) {
+	
+							if(sr.delDateIsPresent(i) > 0) {
+								HashMap<String,String> hmDate = sr.resultItemDeliveryDate(i);
 								
-							}else {
-								log.error("Delivery date values does not match with selected "+param+"  option for search result item."+ sr.resultItemName(i));
+								if (compareDelDate(hmDate,"tomorrow")) {
+									//log.info("Delivery date values match with selected "+param+" option for search result item."+ sr.resultItemName(i));
+									matchCounter++;
+									
+								}else {
+									log.error("Delivery date values does not match with selected "+param+"  option for search result item."+ sr.resultItemName(i));
+								}
+								
+							} else {
+								log.info("Delivery date details for search item " + sr.resultItemName(i) + "is not displayed.");
 							}
-							
-						} else {
-							log.info("Delivery date details for search item " + sr.resultItemName(i) + "is not displayed.");
 						}
+					  break;
 					}
-				  break;
 				}
-				
-				
 			}
-			
+			log.info(matchCounter+" "+totalSearchItems);
+			if(totalSearchItems>0) {
+				Double dataMatchPercent = (double) ((matchCounter*100)/totalSearchItems);
+				
+				if(dataMatchPercent>=90) {
+					log.info("Delivery date values match with selected option for "+dataMatchPercent+"% of search result items.");
+					resultflag = true;
+				} else {
+					log.error("Delivery date values match with selected option only for "+dataMatchPercent+"% of search result items.");
+					resultflag = false;
+				}
+			} else {
+				log.error("zero search result items displayed in the search result page. Cannot check delivery date details.");
+				resultflag = false;
+			}
+		} catch (Exception e) {
+			log.debug("Exception while executing method getCompDelDate. Moving to next testcase.");
+			log.catching(e);
+			Assert.fail();
 		}
-		log.info(matchCounter+" "+totalSearchItems);
-		Float value = (float) ((matchCounter*100)/totalSearchItems);
-		if(value>=90) {
-			log.info("Delivery date values match with selected option for "+value+"% of search result items.");
-			return true;
-		} else {
-			log.error("Delivery date values match with selected option only for "+value+"% of search result items.");
-			return false;
-		}
+		
+		return resultflag;
 	}
 	//Retrieve search result item and parameters displayed on each of them
 	public List<String> getParamFromAllPages (Integer noOfPages, String param) {
+		Integer tryCount=0;
 		//Initializing list of search result items parameters: 
 		List<String> resultItemParam = new ArrayList<String>(); 
-
-		if (noOfPages != 0) {
+		try {
+		if (noOfPages > 0) {
 			// Retrieve parameters of search result items from each of the search result page
 			// and make it in to an array.
 			
@@ -458,14 +486,18 @@ public class CommonModules {
 					waitForPageLoaded();
 				}
 				
-				
 				//Verify if search result page is displayed
-				try {
-					
-				wait.until(ExpectedConditions.visibilityOf(sr.resultList()));
-					log.info("Search result page displayed successfully.");
-				} catch(TimeoutException e) {
-					log.error("TimeOut while loading Search result page. May not be able to continue.");
+				while(tryCount<2) {
+					try {
+						tryCount++;
+						wait.until(ExpectedConditions.visibilityOf(sr.resultList()));
+						log.info("Search result page displayed successfully.");
+					} catch(TimeoutException e) {
+						if(tryCount==2) {
+							log.error("TimeOut while loading Search result page. May not be able to continue.");
+							log.catching(e);
+						}
+					}
 				}
 				log.info("Retrieve items displayed in the search result page: " + n);
 				// Part1 get the list of items displayed in the search result page.
@@ -473,27 +505,35 @@ public class CommonModules {
 				
 				switch(param) {
 					case "Name": // Part2 Retrieve names of items displayed in the search result page.
-						for (int i = 1; i <= resultItems.size(); i++) {
-							resultItemParam.add(sr.resultItemName(i));
+						for (int i = 1; i < resultItems.size(); i++) {
+							String itemName = sr.resultItemName(i);
+							if(itemName!="INVALID") {
+								resultItemParam.add(itemName);
+							} else {
+								log.info("Name of search item index "+i+" could not be retrieved. Moving to next item.");
+							}
+							
 						}
 						break;
 					case "Price"://Retrieve price of items displayed in the search result page.
-						for (int i = 1; i <= resultItems.size(); i++) {
+						for (int i = 1; i < resultItems.size(); i++) {
 							String price = sr.resultItemPrice(i);
 							if ( price != "INVALID") {
 								resultItemParam.add(price.substring(1));
 							} else {
-								log.info("Price for search item " + sr.resultItemName(i) + "is not displayed.");
+								log.info("Price for search item " + sr.resultItemName(i) + " is not displayed.");
 							}
+					
+						
 						}
 						break;
 					case "CustRev"://Retrieve customer review of items displayed in the search result page.
-						for (int i = 1; i <= resultItems.size(); i++) {
+						for (int i = 1; i < resultItems.size(); i++) {
 							String rating = sr.getAvgCustReview(i);
-							if ( rating != null) {
+							if ( rating != "INVALID") {
 								resultItemParam.add(rating);
 							} else {
-								log.info("Customer review for search item " + sr.resultItemName(i) + "is not displayed.");
+								log.info("Customer review for search item " + sr.resultItemName(i) + " is not displayed.");
 							}
 						}
 						break;
@@ -502,6 +542,10 @@ public class CommonModules {
 		} else {
 			log.error("Unable to find no. of search result pages. Cannot continue. Moving to next testcase.");
 			Assert.fail();
+		}
+		} catch (Exception e) {
+			log.debug("Exception while executing method getParamFromAllPages. Movin to next testcase.");
+			log.catching(e);
 		}
 		//log.info("Array size:"+resultItemParam.size());
 		return resultItemParam;
@@ -566,10 +610,10 @@ public class CommonModules {
 			//log.error("Delivery date values does not match with selected option.");
 			return false;
 		}
-		
 	}
 	//Search a product in the website and check if result page is displayed
-	public void searchProduct() {
+	public Boolean searchProductMethod() {
+		Integer tryCount=0;
 		try {
 			
 			log.info("Entering product name in the search bar");
@@ -578,24 +622,28 @@ public class CommonModules {
 			hp.searchBar().sendKeys(inputValues.get("Product"));
 			hp.searchButton().click();
 			
-			Thread.sleep(1000);
-			waitForPageLoaded();
-			
-			//Verify if search result page is displayed
-			if(sr.resultListCheckDisplay() > 0) {
-				log.info("Search result page displayed successfully.");
-			} else {
-				log.error("Search result page is NOT displayed. May not be able to continue.");
+			Thread.sleep(3000);
+			while(tryCount<2) {
+				waitForPageLoaded();
+				tryCount++;
+				//Verify if search result page is displayed
+				if(sr.resultListCheckDisplay() > 0) {
+					log.info("Search result page displayed successfully.");
+					return true;
+				} else {
+					log.error("Search result page is NOT displayed. May not be able to continue.");
+				}
 			}
 		} catch (Exception e) {
 			log.debug("Exception thrown while searching a product in the website.");
-			log.debug(e);
+			log.catching(e);
 		}
+		return false;
 	}
 	//Increment today's date by no. of days by using LocalDate
 	public LocalDate incrementDate (Integer i) {
 		LocalDate newDate = LocalDate.now().plusDays(i);
 		return newDate;
 	}
-	
+
 }

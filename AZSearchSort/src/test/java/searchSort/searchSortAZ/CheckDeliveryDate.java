@@ -3,6 +3,7 @@ package searchSort.searchSortAZ;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
+import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 import resources.CommonModules;
@@ -14,7 +15,7 @@ public class CheckDeliveryDate extends CommonModules {
 	@Test
 	public void setUp() {
 		// Search product name in the website
-		searchProduct();
+		searchProductMethod();
 		//Get today's date and increment it with no. of days to check.
 		getDateDetails();
 	}
@@ -40,11 +41,12 @@ public class CheckDeliveryDate extends CommonModules {
 				}
 								
 			} else {
-				log.debug("'Get it Today' option is NOT available. Unable to continue. Moving to next testcase ");
+				log.debug("'Get it Today' option is NOT available right now. Skipping. Moving to next testcase ");
+				throw new SkipException("'Get it Today' option is NOT available right now. Skipping. Moving to next testcase ");
 			}
 		} catch (Exception e) {
 			log.info("Exception while executing TESTCASE:CheckTodayDeliveryOption. Exiting testcase.");
-			log.error(e);
+			log.catching(e);
 		}
 
 	}
@@ -69,11 +71,12 @@ public class CheckDeliveryDate extends CommonModules {
 				}
 								
 			} else {
-				log.debug("Get in 2 days option is NOT available. Unable to continue. Moving to next testcase ");
+				log.info("Get in 2 days option is NOT available right now. Skipping. Moving to next testcase ");
+				throw new SkipException("'Get in 2 days' option is NOT available right now. Skipping. Moving to next testcase ");
 			}
 		} catch (Exception e) {
 			log.info("Exception while executing TESTCASE:Check2DaysDeliveryOption. Exiting testcase.");
-			log.error(e);
+			log.catching(e);
 		}
 
 	}
@@ -98,11 +101,12 @@ public class CheckDeliveryDate extends CommonModules {
 				}
 								
 			} else {
-				log.debug("Get it tomorrow option is NOT available. Unable to continue. Moving to next testcase ");
+				log.debug("Get it tomorrow option is NOT available right now. Skipping. Moving to next testcase ");
+				throw new SkipException("Get it tomorrow option is NOT available. Skipping. Moving to next testcase ");
 			}
 		} catch (Exception e) {
 			log.info("Exception while executing TESTCASE:CheckTomorrowDeliveryOption. Exiting testcase.");
-			log.error(e);
+			log.catching(e);
 		}
 
 	}

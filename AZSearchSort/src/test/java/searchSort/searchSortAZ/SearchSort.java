@@ -18,12 +18,20 @@ public class SearchSort extends CommonModules {
 	private static Logger log= LogManager.getLogger(SearchSort.class.getName());
 	
 	@Test(priority=0)
-	public void searchProductCheck() {
-		log.info("TESTCASE: searchProductCheck ");
-		
+	public void searchProduct() {
+		Boolean result = searchProductMethod();
+		if(!result) {
+			log.info("Search result page is NOT displayed as expected. Unable to continue.Exiting. ");
+			Assert.fail();
+		}
+	}
+	
+	@Test(priority=1,dependsOnMethods="searchProduct")
+	public void searchProductNameCheck() {
+		Double percent;
+		log.info("TESTCASE: searchProductNameCheck ");
 		try {
 			
-			searchProduct();
 			log.info("Find the total no. of search result pages.");
 			Integer noOfPages = sr.findNoOfPages();
 
@@ -35,28 +43,33 @@ public class SearchSort extends CommonModules {
 			//The search result item name may contain product name starting with upper and lower case. Hence searching the item name for the same(Ex:Book and book)
 			List<String> itemNameWithString = resultItemName.stream().filter(s->s.contains(prodString)||s.contains(newString)).collect(Collectors.toList());
 			//Part3 verify at least 70% of result items contains the product name in it
+			percent = (double) ((itemNameWithString.size()*100)/resultItemName.size());
 			if(itemNameWithString.size() > (resultItemName.size()*0.7)) {
-				log.info("More than "+((itemNameWithString.size()/resultItemName.size())*100) +"% of the search result items has product name displayed in it.");
+				log.info("More than "+percent+"% of the search result items has product name displayed in it.");
 			} else {
-				log.error("Only less than "+((itemNameWithString.size()/resultItemName.size())*100)+"% of the search result items has product name displayed in it. Please check the search result.");
+				log.error("Only less than "+percent+"% of the search result items has product name displayed in it. Please check the search result.");
 				Assert.fail();
 			}
 			
 			Assert.assertTrue(true, "Searching product name in the website successfully displayed search results.");
 		}catch (Exception e) {
 			log.info("Exception while executing TESTCASE: searchProductCheck. Exiting testcase.");
-			log.debug(e);
+			log.catching(e);
 		}
 	}
 	
-	@Test(dependsOnMethods="searchProductCheck",priority=1,enabled=false)
+	@Test(dependsOnMethods="searchProduct",priority=1)
 	public void setPriceRange() {
 		log.info("TESTCASE: setPriceRange");
 		try {
 		
 		// Set price range for the product
 		log.info("Setting min and max price values for the product.");
-		sr.setMinMaxValues(inputValues.get("MinPrice"), inputValues.get("MaxPrice"));
+		if(!sr.setMinMaxValues(inputValues.get("MinPrice"), inputValues.get("MaxPrice"))) {
+			log.debug("TESTCASE: setPriceRange: search result page has not appeared after setting min max price values. ");
+			log.debug("Cannot continue. Exiting testcase.");
+			Assert.fail();
+		}
 				
 		log.info("Find the total no. of search result pages.");
 		Integer noOfPages = sr.findNoOfPages();
@@ -69,7 +82,7 @@ public class SearchSort extends CommonModules {
 		
 		//Checking if the search results are with configured minPrice and maxPrice
 		log.info("The min and max values set are: "+inputValues.get("MinPrice")+" and "+inputValues.get("MaxPrice"));
-		log.info("Checking if the search results are with configured minPrice and maxPrice.");
+		log.info("Checking if the search results are within configured minPrice and maxPrice.");
 		Boolean result = resItemPriceListInt.stream().allMatch(s-> ValueRange.of(Integer.parseInt(inputValues.get("MinPrice")),Integer.parseInt(inputValues.get("MaxPrice"))).isValidIntValue(s) );
 		if(result) {
 			log.info("The search results are with in set min and max price value range.");
@@ -79,11 +92,11 @@ public class SearchSort extends CommonModules {
 		}
 		}catch(Exception e) {
 			log.info("Exception while executing TESTCASE: setPriceRange. Exiting testcase.");
-			log.debug(e);
+			log.catching(e);
 		}
 	}
 	
-	@Test(dependsOnMethods="searchProductCheck",priority=2,enabled=false)
+	@Test(dependsOnMethods="searchProduct",priority=2)
 	public void sortPriceLowToHigh() {
 		log.info("TESTCASE: sortPriceLowToHigh");
 		
@@ -114,11 +127,11 @@ public class SearchSort extends CommonModules {
 		
 		} catch (Exception e) {
 			log.info("Exception occured in TESTCASE: sortPriceLowToHigh. Exiting testcase.");
-			log.debug(e);
+			log.catching(e);
 		}
 	}
 	
-	@Test(dependsOnMethods="searchProductCheck",priority=2,enabled=false)
+	@Test(dependsOnMethods="searchProduct",priority=2)
 	public void sortPriceHighToLow() {
 		log.info("TESTCASE: sortPriceHighToLow");
 	
@@ -150,11 +163,11 @@ public class SearchSort extends CommonModules {
 		
 		} catch (Exception e) {
 			log.info("Exception occured in TESTCASE: sortPriceHighToLow. Exiting testcase.");
-			log.debug(e);
+			log.catching(e);
 		}
 	}
 	
-	@Test(dependsOnMethods="searchProductCheck",priority=2,enabled=false)
+	@Test(dependsOnMethods="searchProduct",priority=2)
 	public void sortByAvgCustRev() {
 		log.info("TESTCASE: SortByAvgCustomerReview");
 	
@@ -187,7 +200,7 @@ public class SearchSort extends CommonModules {
 		
 		} catch (Exception e) {
 			log.info("Exception occured in TESTCASE: SortByAvgCustomerReview. Exiting testcase.");
-			log.debug(e);
+			log.catching(e);
 		}
 	}
 	

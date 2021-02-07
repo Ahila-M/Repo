@@ -5,7 +5,8 @@
  	<listener class-name="searchSort.searchSortAZ.Listeners"></listener>
  </listeners>
   <test thread-count="1" name="Test">
-   <parameter name="ResourcesPath" value="/home/varsha/Ahilawork/ProjectWorkspace/AZSearchSort/src/main/java/resources"> </parameter>
+   <parameter name="ResourcesPath" value="/home/varsha/Ahilawork/ProjectWorkspace/AZSearchSort/src/main/java/resources"/>
+   <parameter name="browserName" value="chrome"/>
      <classes>
       <class name="searchSort.searchSortAZ.SearchSort"/> 
       <class name="searchSort.searchSortAZ.CheckDeliveryDate"/>

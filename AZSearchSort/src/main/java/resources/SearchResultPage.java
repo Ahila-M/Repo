@@ -7,11 +7,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class SearchResultPage extends CommonModules {
-		WebElement chkBox, optionLink;
+		
 		Logger log = LogManager.getLogger(SearchResultPage.class.getName());
 		public SearchResultPage (WebDriver driver) {
 			this.driver = driver;
@@ -55,7 +57,13 @@ public class SearchResultPage extends CommonModules {
 		private By numberOfPages = By.xpath("//ul[@class='a-pagination'] //*");
 		private By currentPage = By.xpath(("//li[@class='a-selected']"));
 		private By selectablePageText = By.xpath("//li[@class='a-normal'] //a");
-		
+	
+	public Integer pageCount() {
+		return driver.findElements(By.xpath("//html")).size();
+	}
+	public WebElement page() {
+		return driver.findElement(By.xpath("//html"));
+	}
 	public WebElement resultList() {
 			return driver.findElement(resultList);
 	}
@@ -69,16 +77,33 @@ public class SearchResultPage extends CommonModules {
 	}
 	//Retrieve name of the search result item where its index is the parameter 
 	public String resultItemName (Integer index) {
+		Integer elemIsPresent;
+		String itemName="INVALID";
 		String resultItemNameXPath =  resultItemString+"["+index+"]"+resultItemNameString;
 		resultItemName= By.xpath(resultItemNameXPath);
-		return driver.findElement(resultItemName).getText();
+		
+		elemIsPresent = findElementWithWait(resultItemName);
+		if(elemIsPresent>0) {
+			itemName =  driver.findElement(resultItemName).getText();
+		} 
+		return itemName;
 	}
 	//Retrieve price of an search result item using index of the item in the page 
 	public String resultItemPrice (Integer index) {
+		String priceString;
 		String resultItemPriceXPath = "("+resultItemString+"["+index+"]"+resultItemPriceString+")[1]";
 		resultItemPrice = By.xpath(resultItemPriceXPath);
-		if(driver.findElements(resultItemPrice).size()>0) {
-			return driver.findElement(resultItemPrice).getAttribute("textContent");
+		
+		Integer elemIsPresent = findElementWithWait(resultItemPrice);
+		if(elemIsPresent>0) {
+			String price = driver.findElement(resultItemPrice).getAttribute("textContent");
+			if(price.contains(".")) {
+				priceString = price.split("\\.")[1]; 
+				return priceString;
+			} else {
+			    return price;	
+			}
+			
 		} else {
 			return "INVALID";
 		}
@@ -88,13 +113,16 @@ public class SearchResultPage extends CommonModules {
 		return driver.findElement(deliveryOptions);
 	}
 	public Integer getItTodayIsPresent() {
-		return driver.findElements(getItToday).size();
+		Integer elemIsPresent = findElementWithWait(getItToday);
+		return elemIsPresent;
 	}
 	public Integer getItTomorrowIsPresent() {
-		return driver.findElements(getItTomorrow).size();
+		Integer elemIsPresent = findElementWithWait(getItTomorrow);
+		return elemIsPresent;
 	}
 	public Integer getIn2DaysIsPresent() {
-		return driver.findElements(getIn2Days).size();
+		Integer elemIsPresent = findElementWithWait(getIn2Days);
+		return elemIsPresent;
 	}
 	public void setMinPriceValue(String price) {
 		driver.findElement(minPrice).sendKeys(price);
@@ -109,39 +137,52 @@ public class SearchResultPage extends CommonModules {
 		return driver.findElement(sortSelect);
 	}
 	//Click on the SortBy list and select options using Javascript Executor because the list items are unable to select by using 'Select' selenium commands 
-	public void selectSortItem() {
-		WebElement sortSelectElem = driver.findElement(sortSelect);
-		JavascriptExecutor js = (JavascriptExecutor)driver;
-		for(int i=1; i<=2; i++) {
-			js.executeScript("arguments[0].click();", sortSelectElem);
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+	public Boolean selectSortItem() {
+		if(findElementWithWait(sortSelect) > 0) {
+			WebElement sortSelectElem = driver.findElement(sortSelect);
+			JavascriptExecutor js = (JavascriptExecutor)driver;
+			for(int i=1; i<=2; i++) {
+				js.executeScript("arguments[0].click();", sortSelectElem);
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					log.catching(e);
+				}
+				if (findElementWithWait(sortByList) > 0) {
+					break;
+				}
 			}
-			if (driver.findElements(sortByList).size() > 0) {
-				break;
-			} 
+			return true;
+		}else {
+			log.debug("Webelement selecting sortBy is not displayed");
+			log.debug("Cannot continue.");
+			return false;
 		}
 	}
 	public void sortPriceLowToHigh() {
-		selectSortItem();
-		driver.findElement(sortPriceLowToHigh).click();
+		if(selectSortItem()) {
+			driver.findElement(sortPriceLowToHigh).click();
+		}
 	}
 	public void sortPriceHighToLow() {
-		selectSortItem();
-		driver.findElement(sortPriceHighToLow).click();
+		if(selectSortItem()) {
+			driver.findElement(sortPriceHighToLow).click();
+		}
 	}
 	public void sortAvgCustReview() {
-		selectSortItem();
-		driver.findElement(sortAvgCustReview).click();
+		if(selectSortItem()) {
+			driver.findElement(sortAvgCustReview).click();
+		}
 	}
 	public void sortByNewArrival() {
-		selectSortItem();
-		driver.findElement(sortByNewArrival).click();
+		if(selectSortItem()) {
+			driver.findElement(sortByNewArrival).click();
+		}
 	}
 	public Integer pageSelectCheck() {
-		return driver.findElements(pageSelect).size();
+		Integer elemIsPresent = findElementWithWait(pageSelect);
+		return elemIsPresent;
+		//return driver.findElements(pageSelect).size();
 	}
 	//Find the no. of search result pages.
 	public Integer findNoOfPages() {
@@ -170,17 +211,28 @@ public class SearchResultPage extends CommonModules {
 		return noOfPages;
 	}
 	//set Min and Max price values in the search options
-	public void setMinMaxValues (String minValue, String maxValue) {
+	public Boolean setMinMaxValues (String minValue, String maxValue) {
+		Integer elemIsPresent;
 		setMinPriceValue(minValue);
 		setMaxPriceValue(maxValue);
 		clickGoButton();
 		waitForPageLoaded();
-
+		elemIsPresent = findElementWithWait(resultList);
+		if(elemIsPresent>0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	//Get currently selected search result page no.
 	public Integer getCurrentPageNo() {
-		Integer currentPageNo = Integer.parseInt(driver.findElement(currentPage).getText());
-		 return currentPageNo;
+		Integer currentPageNo=0, elemIsPresent;
+		
+		elemIsPresent = findElementWithWait(currentPage);
+		if(elemIsPresent>0) {
+			currentPageNo = Integer.parseInt(driver.findElement(currentPage).getText());
+		} 
+		return currentPageNo;
 	}
 	//Select a particular search result page by its page number.
 	public Boolean selectPageNo (Integer pgNo) {
@@ -200,9 +252,14 @@ public class SearchResultPage extends CommonModules {
 	}
 	//Retrieve Avg. customer review displayed at every search result item
 	public String getAvgCustReview(Integer index) {
+		String custRevString;
+	try {
 		String custRevXpath =  resultItemString+"["+index+"]"+resItemAvgCustRev;
 		By custRev = By.xpath(custRevXpath);
-		String custRevString =	driver.findElement(custRev).getAttribute("innerHTML");
+		custRevString =	driver.findElement(custRev).getAttribute("innerHTML");
+	} catch (NoSuchElementException e) {
+		return "INVALID";
+	}
 		String rating = custRevString.substring(0, 3);
 		return rating;
 	}
@@ -227,38 +284,43 @@ public class SearchResultPage extends CommonModules {
 	}
 	//Select delivery options checkbox
 	public void selectChkBox(String option) {
-		WebElement optionLink;
-		Boolean status;
-		switch(option) {
-			case "today":
-				status =  driver.findElement(getItTodayChkbox).isSelected();
-				optionLink = driver.findElement(getItToday);
-			break;
-			case "tomorrow":
-				status =  driver.findElement(getItTomorrowChkbox).isSelected();
-				optionLink = driver.findElement(getItTomorrow);
-			break;
-			case "twoDays":
-				status =  driver.findElement(getIn2DaysChkbox).isSelected();
-				optionLink = driver.findElement(getIn2Days);
-			break;
-			default:
-				log.info("Invalid entry. Cannot select checkBox.");
-				return;
-		}
-
-		if(!status) {
-			optionLink.click();
-			waitForPageLoaded();
-		} else {
-			log.info("The checkBox is already selected. Cannot select now.");
+		try {
+			WebElement optionLink;
+			Boolean status;
+			switch(option) {
+				case "today":
+					status =  driver.findElement(getItTodayChkbox).isSelected();
+					optionLink = driver.findElement(getItToday);
+				break;
+				case "tomorrow":
+					status =  driver.findElement(getItTomorrowChkbox).isSelected();
+					optionLink = driver.findElement(getItTomorrow);
+				break;
+				case "twoDays":
+					status =  driver.findElement(getIn2DaysChkbox).isSelected();
+					optionLink = driver.findElement(getIn2Days);
+				break;
+				default:
+					log.info("Invalid entry. Cannot select checkBox.");
+					return;
+			} 
+			
+			if(!status) {
+				optionLink.click();
+				waitForPageLoaded();
+			} else {
+				log.info("The checkBox is already selected. Cannot select now.");
+			}
+		} catch (Exception e) {
+			log.debug("Exception during selecting delivery day check box.");
+			log.catching(e);
 		}
 	}
 	//Check if delivery Date is present in search result item 
 	public Integer delDateIsPresent (Integer index) {
 		String resultItemDelDateXPath =  resultItemString+"["+index+"]"+resItemDelDateString;
 		resultItemDelDate= By.xpath(resultItemDelDateXPath);
-		return driver.findElements(resultItemDelDate).size();
+		return findElementWithWait(resultItemDelDate);
 	}
 	//Retrieve delivery date from search result item and return a Hashmap with key values day,date and month.
 	public HashMap<String,String> resultItemDeliveryDate (Integer index) {
@@ -281,7 +343,7 @@ public class SearchResultPage extends CommonModules {
 	}
 	//Convert input date into a Hashmap with keys day,date and month
 	public  HashMap<String,String> getDay(String str) {
-		String day, date, month;
+
 		if (str.contains("-")) {
 			str = (str.split("-"))[1];
 		}
@@ -294,6 +356,20 @@ public class SearchResultPage extends CommonModules {
 		hmDate.put("month", arr1[0].trim());
 		hmDate.put("date", arr1[1].trim());
 		return hmDate;
+	}
+	public Integer findElementWithWait(By element) {
+		Integer tryCount=0,elementSize=0;
+		
+		while (tryCount<2) {
+			try {
+				tryCount++;
+				elementSize =  driver.findElements(element).size();
+				return elementSize;
+			} catch (NoSuchElementException nse) {
+				wait.until(ExpectedConditions.visibilityOf(driver.findElement(element)));
+			}
+		}
+		return elementSize;
 	}
 	
 }
